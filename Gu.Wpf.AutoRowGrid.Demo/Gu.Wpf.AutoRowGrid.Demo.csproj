@@ -63,6 +63,9 @@
     <Compile Include="LastRowFillView.xaml.cs">
       <DependentUpon>LastRowFillView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SandBoxView.xaml.cs">
+      <DependentUpon>SandBoxView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel.cs" />
     <Page Include="AutoIncrementColumnsView.xaml">
       <SubType>Designer</SubType>
@@ -97,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NestedRowsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SandBoxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
