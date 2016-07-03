@@ -1,4 +1,4 @@
-﻿namespace GridBox
+﻿namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System.Windows.Controls;
 

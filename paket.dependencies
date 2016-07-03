@@ -1,2 +1,3 @@
-source C:\Tfs\Coromatic\Common\GuGet
 source http://www.nuget.org/api/v2/
+
+nuget JetBrains.Annotations

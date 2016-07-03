@@ -1,9 +1,9 @@
-﻿namespace GridBox
+﻿namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    using GridBox.Annotations;
+    using JetBrains.Annotations;
 
     public class ViewModel : INotifyPropertyChanged
     {
