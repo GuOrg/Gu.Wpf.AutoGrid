@@ -79,8 +79,8 @@
                     continue;
                 }
 
-                // this can potentially SO but can't be written to do it from xaml.
-                // not gonna protect against it
+                // this can't SO since WPF already checks that an element can only have one parent.
+                // letting it fail with the framework exception.
                 AddRowsRecursive(grid, (Rows)item);
             }
         }
