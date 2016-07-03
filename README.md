@@ -10,6 +10,26 @@ Is a `MarkupExtension` that spits out a new vanilla WPF grid when `ProvideValue`
 # Row 
 Is just a `List<UIElement>` that insers its contents on the next row in the grid. This avoids specifying `Grid.Row="n"`on multiple elements that are oin the same row and makes reordering trivial.
 
+# AutoIncrementation
+By default children of a `Row` get column index from their position:
+```xaml
+<autoRowGrid:Row Name="first row">
+    <TextBlock Text="foo1" /> <!--this gets Grid.Column="0"-->
+    <TextBox Text="{Binding Value1}" /> <!--this gets Grid.Column="1"-->
+</autoRowGrid:Row>
+```
+
+If you want to set expllicit columns use UseExplicitColumns
+```xaml
+<autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
+    <Rectangle Grid.Column="0" Fill="Aqua" />
+    <TextBlock Grid.Column="0" Text="foo1" />
+    <TextBox Grid.Column="1" Text="{Binding Value1}" />
+</autoRowGrid:Row>
+```
+
+The default for `Row`and Rows` is `Inherit`meaning they inherit incrementation from parent going all the way up to the `GridExtension`
+
 # Sample xaml:
 
 ```xaml
