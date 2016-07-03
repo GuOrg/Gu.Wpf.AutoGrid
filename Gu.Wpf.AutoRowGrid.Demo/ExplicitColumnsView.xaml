@@ -11,9 +11,10 @@
     </UserControl.DataContext>
     <!--  ReSharper disable Xaml.RedundantAttachedProperty  -->
     <autoRowGrid:Grid AutoIncrementation="UseExplicitColumns" ColumnDefinitions="Auto *">
-        <autoRowGrid:Row Name="first row">
-            <TextBox Grid.Column="1" Text="{Binding Value1}" />
+        <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
+            <Rectangle Grid.Column="0" Fill="Aqua" />
             <TextBlock Grid.Column="0" Text="foo1" />
+            <TextBox Grid.Column="1" Text="{Binding Value1}" />
         </autoRowGrid:Row>
 
         <autoRowGrid:Rows Name="a bunch of rows">
