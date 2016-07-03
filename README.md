@@ -10,7 +10,7 @@ Is a `MarkupExtension` that spits out a new vanilla WPF grid when `ProvideValue`
 # Row 
 Is just a `List<UIElement>` that insers its contents on the next row in the grid. This avoids specifying `Grid.Row="n"`on multiple elements that are oin the same row and makes reordering trivial.
 
-Sample xaml:
+# Sample xaml:
 
 ```xaml
 <Window ...
@@ -42,6 +42,54 @@ Sample xaml:
         </autoRowGrid:Row>
     </autoRowGrid:Grid>
 </Window>
+```
+
+# Sample with nesting:
+```xaml
+<UserControl ...
+             xmlns:autoRowGrid="http://gu.se/AutoRowGrid"
+             ...>
+    <autoRowGrid:Grid ColumnDefinitions="Auto *">
+        <autoRowGrid:Row Name="first row">
+            <TextBlock Grid.Column="0" Text="foo1" />
+            <TextBox Grid.Column="1" Text="{Binding Value1}" />
+        </autoRowGrid:Row>
+
+        <autoRowGrid:Rows Name="a bunch of rows">
+            <autoRowGrid:Row>
+                <TextBlock Grid.Column="0" Text="foo2" />
+                <TextBox Grid.Column="1" Text="{Binding Value2}" />
+            </autoRowGrid:Row>
+
+            <autoRowGrid:Row>
+                <TextBlock Grid.Column="0" Text="foo3" />
+                <TextBox Grid.Column="1" Text="{Binding Value3}" />
+            </autoRowGrid:Row>
+
+            <autoRowGrid:Rows Name="a bunch of nested rows">
+                <autoRowGrid:Row>
+                    <TextBlock Grid.Column="0" Text="foo4" />
+                    <TextBox Grid.Column="1" Text="{Binding Value4}" />
+                </autoRowGrid:Row>
+
+                <autoRowGrid:Row>
+                    <TextBlock Grid.Column="0" Text="foo5" />
+                    <TextBox Grid.Column="1" Text="{Binding Value5}" />
+                </autoRowGrid:Row>
+            </autoRowGrid:Rows>
+
+            <autoRowGrid:Row>
+                <TextBlock Grid.Column="0" Text="foo6" />
+                <TextBox Grid.Column="1" Text="{Binding Value6}" />
+            </autoRowGrid:Row>
+        </autoRowGrid:Rows>
+
+        <autoRowGrid:Row Name="last row">
+            <TextBlock Grid.Column="0" Text="foo7" />
+            <TextBox Grid.Column="1" Text="{Binding Value7}" />
+        </autoRowGrid:Row>
+    </autoRowGrid:Grid>
+</UserControl>
 ```
 
 Produces:
