@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:GridBox"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="6,0" />
+        </Style>
     </Application.Resources>
 </Application>

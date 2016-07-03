@@ -1,11 +1,10 @@
 ﻿namespace GridBox
 {
-    using System.Collections;
     using System.Windows;
     using System.Windows.Controls;
     using System;
+    using System.Collections.ObjectModel;
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(Grid))]
@@ -14,16 +13,30 @@
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            var grid = this.Rows?.Grid;
-            if (grid == null)
+            var grid = new Grid();
+            foreach (var row in this.Rows)
             {
-                return null;
-            }
+                var uiElement = row as UIElement;
+                if (uiElement != null)
+                {
+                    grid.Children.Add(uiElement);
+                    var rows = Grid.GetRow(uiElement);
+                    while (rows > grid.RowDefinitions.Count - 1)
+                    {
+                        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                    }
 
-            var rows = grid.Children.OfType<UIElement>().Max(Grid.GetRow);
-            while (rows > grid.RowDefinitions.Count - 1)
-            {
+                    continue;
+                }
+
+                var agr = (AtoGridRow)row;
                 grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                var rowIndex = grid.RowDefinitions.Count - 1;
+                foreach (var child in agr)
+                {
+                    grid.Children.Add(child);
+                    Grid.SetRow(child, rowIndex);
+                }
             }
 
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -42,61 +55,28 @@
 
         public AutoGridRows Rows { get; set; } = new AutoGridRows();
 
-        public class AutoGridRows : IList
+        public class AutoGridRows : Collection<object>
         {
-            internal readonly Grid Grid = new Grid();
-
-            public int Count => ThrowNotSupported<int>();
-
-            public bool IsReadOnly => false;
-
-            public bool IsFixedSize => false;
-
-            public object SyncRoot => ThrowNotSupported<object>();
-
-            public bool IsSynchronized => ThrowNotSupported<bool>();
-
-            public object this[int index]
+            protected override void InsertItem(int index, object item)
             {
-                get { return ThrowNotSupported<object>(); }
-                set { ThrowNotSupported(); }
+                AssertItem(item);
+                base.InsertItem(index, item);
             }
 
-            public IEnumerator GetEnumerator() => ThrowNotSupported<IEnumerator>();
-
-            public void CopyTo(Array array, int index) => ThrowNotSupported();
-
-            public int Add(object value)
+            protected override void SetItem(int index, object item)
             {
-                var uiElement = (UIElement)value;
-                this.Grid.Children.Add(uiElement);
-                return 0;
+                AssertItem(item);
+                base.SetItem(index, item);
             }
 
-            public bool Contains(object value) => ThrowNotSupported<bool>();
-
-            public void Clear()
+            private static void AssertItem(object item)
             {
-                this.Grid.Children.Clear();
-                this.Grid.RowDefinitions.Clear();
-            }
+                if (item is AtoGridRow || item is UIElement)
+                {
+                    return;
+                }
 
-            public int IndexOf(object value) => ThrowNotSupported<int>();
-
-            public void Insert(int index, object value) => ThrowNotSupported();
-
-            public void Remove(object value) => ThrowNotSupported();
-
-            public void RemoveAt(int index) => ThrowNotSupported();
-
-            private static void ThrowNotSupported([CallerMemberName] string caller = null)
-            {
-                throw new NotSupportedException($"{typeof(AutoGridRows).Name} does not support {caller}");
-            }
-
-            private static T ThrowNotSupported<T>([CallerMemberName] string caller = null)
-            {
-                throw new NotSupportedException($"{typeof(AutoGridRows).Name} does not support {caller}");
+                throw new ArgumentException($"Only items of type {typeof(UIElement).FullName} or {typeof(AtoGridRow).Name} are allowed.");
             }
         }
     }

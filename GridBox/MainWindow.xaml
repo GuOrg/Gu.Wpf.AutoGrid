@@ -8,20 +8,21 @@
         Width="525"
         Height="350"
         mc:Ignorable="d">
-    <Window.Resources>
-        <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Margin" Value="6,0"></Setter>
-        </Style>
-    </Window.Resources>
-     <local:AutoGrid ColumnDefinitions="Auto *">
-        <TextBlock Text="foo1" Grid.Row="0" Grid.Column="0" />
-        <TextBox Text="bar1" Grid.Row="0" Grid.Column="1"/>
+    <local:AutoGrid ColumnDefinitions="Auto *">
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="foo1" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="bar1" />
 
-        <TextBlock Text="foo2" Grid.Row="1" Grid.Column="0" />
-        <TextBox Text="bar2" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="foo2" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="bar2" />
 
-        <TextBlock Text="foo3" Grid.Row="2" Grid.Column="0" />
-        <TextBox Text="bar3" Grid.Row="2" Grid.Column="1"/>
+        <local:AtoGridRow>
+            <TextBlock Grid.Column="0" Text="foo3" />
+            <TextBox Grid.Column="1" Text="bar3" />
+        </local:AtoGridRow>
+
+        <local:AtoGridRow>
+            <TextBlock Grid.Column="0" Text="foo4" />
+            <TextBox Grid.Column="1" Text="bar4" />
+        </local:AtoGridRow>
     </local:AutoGrid>
 </Window>

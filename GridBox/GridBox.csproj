@@ -63,10 +63,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AtoGridRow.cs" />
     <Compile Include="AutoGrid.cs" />
-    <Compile Include="ColumnDefinitions.cs" />
-    <Compile Include="ColumnDefinitionsConverter.cs" />
-    <Compile Include="GridLengthsParser.cs" />
+    <Compile Include="ColumnDefinitions\ColumnDefinitions.cs" />
+    <Compile Include="ColumnDefinitions\ColumnDefinitionsConverter.cs" />
+    <Compile Include="ColumnDefinitions\GridLengthsParser.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -99,9 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
