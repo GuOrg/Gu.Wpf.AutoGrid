@@ -15,7 +15,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Text="foo2" />
         <TextBox Grid.Row="1" Grid.Column="1" Text="bar2" />
         
-        <Slider Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+        <Rectangle Fill="Yellow" Height="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
 
         <autoRowGrid:Row>
             <TextBlock Grid.Column="0" Text="foo3" />
@@ -30,7 +30,7 @@
         <Button Grid.Row="4" Grid.Column="2" Content="foo5" />
 
         <autoRowGrid:Row>
-            <Slider Grid.Column="0" Grid.ColumnSpan="3" />
+            <Rectangle Fill="Blue" Height="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
         </autoRowGrid:Row>
     </autoRowGrid:Grid>
 </Window>
