@@ -7,39 +7,6 @@
 
 Small prototype for a less noisy WPF grid.
 
-# Limitation
-As it is a markupextension using it like this will not work:
-
-```xaml
-<Grid>
-    <Grid.RowDefinitions>
-        <RowDefinition />
-        <RowDefinition />
-    </Grid.RowDefinitions>
-	<autoRowGrid:Grid>
-		 ...
-	</autoRowGrid:Grid>
-</Grid>
-```
-
-Not sure if there is a nice workaround for this. Think the lib still has potential to be useful.
-A hacky way would be to set it as content for a lightweight element, probably good with a comment in xaml for stuff like this:
-
-```xaml
-<Grid>
-    <Grid.RowDefinitions>
-        <RowDefinition />
-        <RowDefinition />
-    </Grid.RowDefinitions>
-    <Border>
-        <!--using a border to set the grid as content for here, the border does nothing but is a lightweight element-->
-        <autoRowGrid:Grid ColumnDefinitions="*">
-            <TextBlock Text="hej" />
-        </autoRowGrid:Grid>
-    </Border>
-</Grid>
-´´´
-
 
 # Grid
 Is a `MarkupExtension` that spits out a new vanilla WPF grid when `ProvideValue` is called.
@@ -207,4 +174,41 @@ Produces:
 
 Produces:
 ![screenie](http://i.imgur.com/GQifcug.png)
+
+
+# Limitation
+As it is a markupextension using it like this will not work:
+
+```xaml
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+    </Grid.RowDefinitions>
+	<autoRowGrid:Grid>
+		 ...
+	</autoRowGrid:Grid>
+</Grid>
+```
+
+![error](http://i.imgur.com/MkEn56s.png)
+
+
+Not sure if there is a nice workaround for this. Think the lib still has potential to be useful.
+A hacky way would be to set it as content for a lightweight element, probably good with a comment in xaml for stuff like this:
+
+```xaml
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+    </Grid.RowDefinitions>
+    <Border>
+        <!--using a border to set the grid as content for here, the border does nothing but is a lightweight element-->
+        <autoRowGrid:Grid ColumnDefinitions="*">
+            <TextBlock Text="hej" />
+        </autoRowGrid:Grid>
+    </Border>
+</Grid>
+Â´Â´Â´
 
