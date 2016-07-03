@@ -1,8 +1,7 @@
-﻿using System.Windows;
-
-namespace Gu.Wpf.AutoRowGrid
+﻿namespace Gu.Wpf.AutoRowGrid
 {
     using System.Collections.ObjectModel;
+    using System.Windows;
 
     /// <summary>
     /// A collection of <see cref="Row"/> or <see cref="Rows"/>

@@ -1,22 +1,25 @@
-﻿using System.Windows;
-
-namespace Gu.Wpf.AutoRowGrid
+﻿namespace Gu.Wpf.AutoRowGrid
 {
+    using System.Windows;
+
     /// <summary>Used only for constraining <see cref="Rows"/></summary>
     public interface IRow
     {
-        /// <summary><see cref="Name"/> is not used for anything but can perhaps be good for documentation.</summary>
+        /// <summary>
+        /// Gets or sets the name.
+        /// The Name is not used for anything but can perhaps be good for documenting the xaml.
+        /// </summary>
         string Name { get; set; }
 
         /// <summary>
-        /// Gets and sets a value indicating if children of this row should get column index from their position in the row.
+        /// Gets or sets a value indicating if children of this row should get column index from their position in the row.
         /// If set to inherit parents incrementation settings are used.
         /// Default is Inherit.
         /// </summary>
         AutoIncrementation AutoIncrementation { get; set; }
 
         /// <summary>
-        /// Gets and sets a value for what height should be used when generating rows for the grid.
+        /// Gets or sets a value for what height should be used when generating rows for the grid.
         /// Default is null meaning it inherits from parent.
         /// </summary>
         GridLength? Height { get; set; }

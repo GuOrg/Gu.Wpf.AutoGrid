@@ -2,3 +2,6 @@
 tags wpf xaml grid
 projectUrl https://github.com/JohanLarsson/Gu.Wpf.AutoGrid
 licenseUrl http://opensource.org/licenses/MIT
+
+excludeddependencies
+  StyleCop.Analyzers

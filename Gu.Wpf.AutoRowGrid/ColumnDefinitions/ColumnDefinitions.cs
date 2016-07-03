@@ -11,12 +11,10 @@ namespace Gu.Wpf.AutoRowGrid
     [TypeConverter(typeof(ColumnDefinitionsConverter))]
     public class ColumnDefinitions : Collection<System.Windows.Controls.ColumnDefinition>
     {
-        /// <inheritdoc/>
         public ColumnDefinitions()
         {
         }
 
-        /// <inheritdoc/>
         public ColumnDefinitions(IList<System.Windows.Controls.ColumnDefinition> collection)
             : base(collection)
         {

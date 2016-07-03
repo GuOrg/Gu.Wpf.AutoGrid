@@ -3,3 +3,4 @@ source http://www.nuget.org/api/v2/
 nuget NUnit
 nuget TestStack.White
 nuget JetBrains.Annotations
+nuget StyleCop.Analyzers

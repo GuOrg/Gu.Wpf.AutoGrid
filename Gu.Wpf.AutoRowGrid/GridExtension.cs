@@ -16,22 +16,25 @@
     public class GridExtension : MarkupExtension
     {
         /// <summary>
-        /// Specifies if content of rows will get column index from index.
+        /// Gets or sets a value that specifies if content of rows will get column index from index.
         /// Default is Increment.
         /// This will be used for all subnodes that have Inherit.
         /// </summary>
         public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
 
-        /// <summary> See <see cref="Grid.ColumnDefinitions"/> </summary>
+        /// <summary> Gets or sets see <see cref="Grid.ColumnDefinitions"/> </summary>
         public ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions();
 
         /// <summary>
-        /// Gets and sets a value for what height should be used when generating rows for the grid.
+        /// Gets or sets a value for what height should be used when generating rows for the grid.
         /// Default is Auto.
         /// </summary>
         public GridLength RowHeight { get; set; } = GridLength.Auto;
 
-        /// <summary>Specifies if content of rows will get column index from index. Default is Increment.</summary>
+        /// <summary>
+        /// Gets or sets a value thatspecifies if content of rows will get column index from index.
+        /// Default is Increment.
+        /// </summary>
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;
 
         /// <summary>
@@ -40,7 +43,7 @@
         /// If false an extra row with  Height = "*" is added to fill remaining space.</summary>
         public bool LastRowFill { get; set; } = false;
 
-        /// <summary> The contents that are used to generating the grid. </summary>
+        /// <summary> Gets or sets the children that are used when creating the grid.</summary>
         public ChildCollection Rows { get; set; } = new ChildCollection();
 
         /// <inheritdoc/>
@@ -106,7 +109,7 @@
                 // this can't SO since WPF already checks that an element can only have one parent.
                 // letting it fail with the framework exception.
                 var rows = (Rows)item;
-                AddRowsRecursive(grid, rows, rows.Height?? GridLength.Auto);
+                AddRowsRecursive(grid, rows, rows.Height ?? GridLength.Auto);
             }
         }
 
