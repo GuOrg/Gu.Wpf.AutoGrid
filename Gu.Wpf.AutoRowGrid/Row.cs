@@ -4,29 +4,32 @@
     using System.Windows;
     using System.Windows.Controls;
 
+    /// <summary>
+    /// A collection of <see cref="UIElement"/> that will get the same Grid.Row="n"
+    /// Gets index from previous element added to the grid.
+    /// </summary>
     public class Row : Collection<UIElement>, IRow
     {
-        /// <summary><see cref="Name"/> is not used for anything but can perhaps be good for documentation.</summary>
+        /// <inheritdoc/>
         public string Name { get; set; }
 
+        /// <inheritdoc/>
         public AutoIncrementation AutoIncrementation { get; set; } = AutoIncrementation.Inherit;
 
+        /// <inheritdoc/>
         public void AutoIncrement(AutoIncrementation parentAutoIncrementation)
         {
             var autoIncrementation = this.AutoIncrementation.CoerceWith(parentAutoIncrementation);
-            if (autoIncrementation == AutoIncrementation.AutoIncrement)
+            var columnIndex = 0;
+            for (int i = 0; i < this.Items.Count; i++)
             {
-                var columnIndex = 0;
-                for (int i = 0; i < this.Items.Count; i++)
+                var uiElement = this.Items[i];
+                var elementIncrementation = uiElement.GetAutoIncrementation()
+                                                     .CoerceWith(autoIncrementation);
+                if (elementIncrementation == AutoIncrementation.AutoIncrement)
                 {
-                    var uiElement = this.Items[i];
-                    var elementIncrementation = uiElement.GetAutoIncrementation()
-                                                         .CoerceWith(autoIncrementation);
-                    if (elementIncrementation == AutoIncrementation.AutoIncrement)
-                    {
-                        Grid.SetColumn(uiElement, columnIndex);
-                        columnIndex++;
-                    }
+                    Grid.SetColumn(uiElement, columnIndex);
+                    columnIndex++;
                 }
             }
         }

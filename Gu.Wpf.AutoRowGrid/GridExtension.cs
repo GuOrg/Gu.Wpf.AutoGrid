@@ -8,6 +8,7 @@
     using System.Windows.Controls;
     using System.Windows.Markup;
 
+    /// <summary>Helper for creating <see cref="Grid"/></summary>
     [MarkupExtensionReturnType(typeof(Grid))]
     [ContentProperty("Rows")]
     public class GridExtension : MarkupExtension
@@ -19,13 +20,16 @@
         /// </summary>
         public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
 
+        /// <summary> See <see cref="Grid.ColumnDefinitions"/> </summary>
         public ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions();
 
         /// <summary>Specifies if content of rows will get column index from index. Default is Increment.</summary>
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;
 
+        /// <summary> The contents that are used to generating the grid. </summary>
         public ChildCollection Rows { get; set; } = new ChildCollection();
 
+        /// <inheritdoc/>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             var grid = new Grid();
@@ -81,9 +85,10 @@
             }
         }
 
+        /// <summary>A collection of children for <see cref="GridExtension"/> </summary>
         public class ChildCollection : Collection<object>
         {
-            public void AutoIncrement(AutoIncrementation autoIncrementation)
+            internal void AutoIncrement(AutoIncrementation autoIncrementation)
             {
                 foreach (var row in this.Items.OfType<IRow>())
                 {
@@ -91,12 +96,14 @@
                 }
             }
 
+            /// <inheritdoc/>
             protected override void InsertItem(int index, object item)
             {
                 BeforeAddItem(item);
                 base.InsertItem(index, item);
             }
 
+            /// <inheritdoc/>
             protected override void SetItem(int index, object item)
             {
                 BeforeAddItem(item);

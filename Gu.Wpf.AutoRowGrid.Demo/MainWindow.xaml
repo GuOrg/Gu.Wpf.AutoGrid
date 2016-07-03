@@ -24,6 +24,10 @@
         <TabItem Header="verbose columndefinitions">
             <gridBox:ColumnDefinitionsView />
         </TabItem>
+
+        <TabItem Header="auto increment">
+            <gridBox:AutoIncrementColumnsView />
+        </TabItem>
     </TabControl>
 </Window>
 
