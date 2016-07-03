@@ -10,6 +10,10 @@
     [ContentProperty("Rows")]
     public class GridExtension : MarkupExtension
     {
+        public ColumnDefinitions.ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions.ColumnDefinitions();
+
+        public AutoGridRows Rows { get; set; } = new AutoGridRows();
+
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             var grid = new Grid();
@@ -49,10 +53,6 @@
 
             return grid;
         }
-
-        public ColumnDefinitions.ColumnDefinitions ColumnDefinitions { get; set; }
-
-        public AutoGridRows Rows { get; set; } = new AutoGridRows();
 
         public class AutoGridRows : Collection<object>
         {

@@ -3,6 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{AF6E6D40-FE2C-4077-A4D8-D22587491C9C}"
+	ProjectSection(SolutionItems) = preProject
+		.paket\paket.bootstrapper.exe = .paket\paket.bootstrapper.exe
+		paket.dependencies = paket.dependencies
+		.paket\Readme.paket.md = .paket\Readme.paket.md
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid", "Gu.Wpf.AutoRowGrid\Gu.Wpf.AutoRowGrid.csproj", "{AF8CBE62-B44A-4E61-90F6-5453651C16A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid.Demo", "Gu.Wpf.AutoRowGrid.Demo\Gu.Wpf.AutoRowGrid.Demo.csproj", "{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}"
