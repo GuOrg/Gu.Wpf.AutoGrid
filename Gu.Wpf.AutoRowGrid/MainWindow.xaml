@@ -2,27 +2,29 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:GridBox"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gu="http://gu.se/AutoGrid"
         Title="MainWindow"
         Width="525"
         Height="350"
         mc:Ignorable="d">
-    <local:AutoGrid ColumnDefinitions="Auto *">
+    <gu:AutoGrid ColumnDefinitions="Auto * 50">
         <TextBlock Grid.Row="0" Grid.Column="0" Text="foo1" />
         <TextBox Grid.Row="0" Grid.Column="1" Text="bar1" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="foo2" />
         <TextBox Grid.Row="1" Grid.Column="1" Text="bar2" />
 
-        <local:AtoGridRow>
+        <gu:AtoGridRow>
             <TextBlock Grid.Column="0" Text="foo3" />
             <TextBox Grid.Column="1" Text="bar3" />
-        </local:AtoGridRow>
+        </gu:AtoGridRow>
 
-        <local:AtoGridRow>
+        <gu:AtoGridRow>
             <TextBlock Grid.Column="0" Text="foo4" />
             <TextBox Grid.Column="1" Text="bar4" />
-        </local:AtoGridRow>
-    </local:AutoGrid>
+        </gu:AtoGridRow>
+
+        <Button Grid.Row="4" Grid.Column="2" Content="foo5" />
+    </gu:AutoGrid>
 </Window>

@@ -1,10 +1,9 @@
-﻿namespace GridBox
+﻿namespace Gu.Wpf.AutoGrid
 {
-    using System.Windows;
-    using System.Windows.Controls;
     using System;
     using System.Collections.ObjectModel;
-    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(Grid))]
@@ -51,7 +50,7 @@
             return grid;
         }
 
-        public ColumnDefinitions ColumnDefinitions { get; set; }
+        public ColumnDefinitions.ColumnDefinitions ColumnDefinitions { get; set; }
 
         public AutoGridRows Rows { get; set; } = new AutoGridRows();
 

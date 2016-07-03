@@ -1,4 +1,4 @@
-namespace GridBox
+namespace Gu.Wpf.AutoGrid.ColumnDefinitions
 {
     using System.Collections.Generic;
     using System.ComponentModel;
