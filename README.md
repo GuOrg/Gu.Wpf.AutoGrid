@@ -1,7 +1,10 @@
 # Gu.Wpf.AutoGrid
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/weieh2q82cc87ksr/branch/master?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-wpf-autogrid/branch/master)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.AutoRowGrid.svg)](https://www.nuget.org/packages/Gu.Wpf.AutoRowGrid/)
+
+
 Small prototype for a less noisy WPF grid. 
 
 # Grid
