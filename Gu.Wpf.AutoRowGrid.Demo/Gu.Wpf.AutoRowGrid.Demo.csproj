@@ -48,12 +48,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AutoIncrementColumnsView.xaml.cs">
+      <DependentUpon>AutoIncrementColumnsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ColumnSpanView.xaml.cs">
       <DependentUpon>ColumnSpanView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExplicitColumnsView.xaml.cs">
+      <DependentUpon>ExplicitColumnsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel.cs" />
+    <Page Include="AutoIncrementColumnsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ColumnSpanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExplicitColumnsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

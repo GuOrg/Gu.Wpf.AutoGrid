@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Markup;
@@ -11,13 +12,24 @@
     [ContentProperty("Rows")]
     public class GridExtension : MarkupExtension
     {
+        /// <summary>
+        /// Specifies if content of rows will get column index from index.
+        /// Default is Increment.
+        /// This will be used for all subnodes that have Inherit.
+        /// </summary>
+        public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
+
         public ColumnDefinitions.ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions.ColumnDefinitions();
+
+        /// <summary>Specifies if content of rows will get column index from index. Default is Increment.</summary>
+        public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;
 
         public ChildCollection Rows { get; set; } = new ChildCollection();
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             var grid = new Grid();
+            this.Rows.AutoIncrement(this.AutoIncrementation);
             AddRows(grid, this.Rows);
 
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -69,21 +81,29 @@
 
         public class ChildCollection : Collection<object>
         {
+            public void AutoIncrement(AutoIncrementation autoIncrementation)
+            {
+                foreach (var row in this.Items.OfType<IRow>())
+                {
+                    row.AutoIncrement(autoIncrementation);
+                }
+            }
+
             protected override void InsertItem(int index, object item)
             {
-                AssertItem(item);
+                BeforeAddItem(item);
                 base.InsertItem(index, item);
             }
 
             protected override void SetItem(int index, object item)
             {
-                AssertItem(item);
+                BeforeAddItem(item);
                 base.SetItem(index, item);
             }
 
-            private static void AssertItem(object item)
+            private static void BeforeAddItem(object item)
             {
-                if (item is Row || item is Rows || item is UIElement)
+                if (item is UIElement || item is IRow)
                 {
                     return;
                 }

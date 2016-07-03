@@ -6,7 +6,7 @@
     {
         public NestedRowsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

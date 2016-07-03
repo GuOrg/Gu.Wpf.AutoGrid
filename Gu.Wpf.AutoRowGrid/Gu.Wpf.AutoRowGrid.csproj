@@ -41,6 +41,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoIncrementation.cs" />
+    <Compile Include="AutoIncrementationExt.cs" />
     <Compile Include="IRow.cs" />
     <Compile Include="Row.cs" />
     <Compile Include="GridExtension.cs" />

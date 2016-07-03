@@ -10,6 +10,7 @@
         <local:ViewModel />
     </UserControl.DataContext>
     <autoRowGrid:Grid ColumnDefinitions="Auto * 50">
+        <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
         <TextBlock Grid.Row="0" Grid.Column="0" Text="foo1" />
         <TextBox Grid.Row="0" Grid.Column="1"  Text="{Binding Value1}" />
 
@@ -18,20 +19,24 @@
 
         <Rectangle Fill="Yellow" Height="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
 
+        <!-- ReSharper restore Xaml.RedundantAttachedProperty -->
+
         <autoRowGrid:Row>
-            <TextBlock Grid.Column="0" Text="foo3" />
-            <TextBox Grid.Column="1"  Text="{Binding Value3}" />
+            <TextBlock Text="foo3" />
+            <TextBox Text="{Binding Value3}" />
         </autoRowGrid:Row>
 
         <autoRowGrid:Row>
-            <TextBlock Grid.Column="0" Text="foo4" />
-            <TextBox Grid.Column="1"  Text="{Binding Value4}" />
+            <TextBlock Text="foo4" />
+            <TextBox Text="{Binding Value4}" />
         </autoRowGrid:Row>
 
+        <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
         <Button Grid.Row="4" Grid.Column="2" Content="foo5" />
 
-        <autoRowGrid:Row>
+        <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
             <Rectangle Fill="Blue" Height="15" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
         </autoRowGrid:Row>
+        <!-- ReSharper restore Xaml.RedundantAttachedProperty -->
     </autoRowGrid:Grid>
 </UserControl>

@@ -115,7 +115,7 @@ namespace GridBox.Annotations
     /// </param>
     public StringFormatMethodAttribute([NotNull] string formatParameterName)
     {
-      FormatParameterName = formatParameterName;
+        this.FormatParameterName = formatParameterName;
     }
 
     [NotNull] public string FormatParameterName { get; private set; }
@@ -130,7 +130,7 @@ namespace GridBox.Annotations
   {
     public ValueProviderAttribute([NotNull] string name)
     {
-      Name = name;
+        this.Name = name;
     }
 
     [NotNull] public string Name { get; private set; }
@@ -194,7 +194,7 @@ namespace GridBox.Annotations
     public NotifyPropertyChangedInvocatorAttribute() { }
     public NotifyPropertyChangedInvocatorAttribute([NotNull] string parameterName)
     {
-      ParameterName = parameterName;
+        this.ParameterName = parameterName;
     }
 
     [CanBeNull] public string ParameterName { get; private set; }
@@ -251,8 +251,8 @@ namespace GridBox.Annotations
 
     public ContractAnnotationAttribute([NotNull] string contract, bool forceFullStates)
     {
-      Contract = contract;
-      ForceFullStates = forceFullStates;
+        this.Contract = contract;
+        this.ForceFullStates = forceFullStates;
     }
 
     [NotNull] public string Contract { get; private set; }
@@ -274,7 +274,7 @@ namespace GridBox.Annotations
     public LocalizationRequiredAttribute() : this(true) { }
     public LocalizationRequiredAttribute(bool required)
     {
-      Required = required;
+        this.Required = required;
     }
 
     public bool Required { get; private set; }
@@ -320,7 +320,7 @@ namespace GridBox.Annotations
   {
     public BaseTypeRequiredAttribute([NotNull] Type baseType)
     {
-      BaseType = baseType;
+        this.BaseType = baseType;
     }
 
     [NotNull] public Type BaseType { get; private set; }
@@ -344,8 +344,8 @@ namespace GridBox.Annotations
 
     public UsedImplicitlyAttribute(ImplicitUseKindFlags useKindFlags, ImplicitUseTargetFlags targetFlags)
     {
-      UseKindFlags = useKindFlags;
-      TargetFlags = targetFlags;
+        this.UseKindFlags = useKindFlags;
+        this.TargetFlags = targetFlags;
     }
 
     public ImplicitUseKindFlags UseKindFlags { get; private set; }
@@ -370,8 +370,8 @@ namespace GridBox.Annotations
 
     public MeansImplicitUseAttribute(ImplicitUseKindFlags useKindFlags, ImplicitUseTargetFlags targetFlags)
     {
-      UseKindFlags = useKindFlags;
-      TargetFlags = targetFlags;
+        this.UseKindFlags = useKindFlags;
+        this.TargetFlags = targetFlags;
     }
 
     [UsedImplicitly] public ImplicitUseKindFlags UseKindFlags { get; private set; }
@@ -420,7 +420,7 @@ namespace GridBox.Annotations
     public PublicAPIAttribute() { }
     public PublicAPIAttribute([NotNull] string comment)
     {
-      Comment = comment;
+        this.Comment = comment;
     }
 
     [CanBeNull] public string Comment { get; private set; }
@@ -457,7 +457,7 @@ namespace GridBox.Annotations
     public MustUseReturnValueAttribute() { }
     public MustUseReturnValueAttribute([NotNull] string justification)
     {
-      Justification = justification;
+        this.Justification = justification;
     }
 
     [CanBeNull] public string Justification { get; private set; }
@@ -493,7 +493,7 @@ namespace GridBox.Annotations
     public PathReferenceAttribute() { }
     public PathReferenceAttribute([NotNull, PathReference] string basePath)
     {
-      BasePath = basePath;
+        this.BasePath = basePath;
     }
 
     [CanBeNull] public string BasePath { get; private set; }
@@ -584,7 +584,7 @@ namespace GridBox.Annotations
   {
     public AspMvcAreaMasterLocationFormatAttribute([NotNull] string format)
     {
-      Format = format;
+        this.Format = format;
     }
 
     [NotNull] public string Format { get; private set; }
@@ -595,7 +595,7 @@ namespace GridBox.Annotations
   {
     public AspMvcAreaPartialViewLocationFormatAttribute([NotNull] string format)
     {
-      Format = format;
+        this.Format = format;
     }
 
     [NotNull] public string Format { get; private set; }
@@ -606,7 +606,7 @@ namespace GridBox.Annotations
   {
     public AspMvcAreaViewLocationFormatAttribute([NotNull] string format)
     {
-      Format = format;
+        this.Format = format;
     }
 
     [NotNull] public string Format { get; private set; }
@@ -617,7 +617,7 @@ namespace GridBox.Annotations
   {
     public AspMvcMasterLocationFormatAttribute(string format)
     {
-      Format = format;
+        this.Format = format;
     }
 
     public string Format { get; private set; }
@@ -628,7 +628,7 @@ namespace GridBox.Annotations
   {
     public AspMvcPartialViewLocationFormatAttribute([NotNull] string format)
     {
-      Format = format;
+        this.Format = format;
     }
 
     [NotNull] public string Format { get; private set; }
@@ -639,7 +639,7 @@ namespace GridBox.Annotations
   {
     public AspMvcViewLocationFormatAttribute([NotNull] string format)
     {
-      Format = format;
+        this.Format = format;
     }
 
     [NotNull] public string Format { get; private set; }
@@ -657,7 +657,7 @@ namespace GridBox.Annotations
     public AspMvcActionAttribute() { }
     public AspMvcActionAttribute([NotNull] string anonymousProperty)
     {
-      AnonymousProperty = anonymousProperty;
+        this.AnonymousProperty = anonymousProperty;
     }
 
     [CanBeNull] public string AnonymousProperty { get; private set; }
@@ -674,7 +674,7 @@ namespace GridBox.Annotations
     public AspMvcAreaAttribute() { }
     public AspMvcAreaAttribute([NotNull] string anonymousProperty)
     {
-      AnonymousProperty = anonymousProperty;
+        this.AnonymousProperty = anonymousProperty;
     }
 
     [CanBeNull] public string AnonymousProperty { get; private set; }
@@ -692,7 +692,7 @@ namespace GridBox.Annotations
     public AspMvcControllerAttribute() { }
     public AspMvcControllerAttribute([NotNull] string anonymousProperty)
     {
-      AnonymousProperty = anonymousProperty;
+        this.AnonymousProperty = anonymousProperty;
     }
 
     [CanBeNull] public string AnonymousProperty { get; private set; }
@@ -794,7 +794,7 @@ namespace GridBox.Annotations
     public HtmlElementAttributesAttribute() { }
     public HtmlElementAttributesAttribute([NotNull] string name)
     {
-      Name = name;
+        this.Name = name;
     }
 
     [CanBeNull] public string Name { get; private set; }
@@ -805,7 +805,7 @@ namespace GridBox.Annotations
   {
     public HtmlAttributeValueAttribute([NotNull] string name)
     {
-      Name = name;
+        this.Name = name;
     }
 
     [NotNull] public string Name { get; private set; }
@@ -828,7 +828,7 @@ namespace GridBox.Annotations
   {
     public CollectionAccessAttribute(CollectionAccessType collectionAccessType)
     {
-      CollectionAccessType = collectionAccessType;
+        this.CollectionAccessType = collectionAccessType;
     }
 
     public CollectionAccessType CollectionAccessType { get; private set; }
@@ -865,7 +865,7 @@ namespace GridBox.Annotations
   {
     public AssertionConditionAttribute(AssertionConditionType conditionType)
     {
-      ConditionType = conditionType;
+        this.ConditionType = conditionType;
     }
 
     public AssertionConditionType ConditionType { get; private set; }
@@ -939,8 +939,8 @@ namespace GridBox.Annotations
   {
     public AspChildControlTypeAttribute([NotNull] string tagName, [NotNull] Type controlType)
     {
-      TagName = tagName;
-      ControlType = controlType;
+        this.TagName = tagName;
+        this.ControlType = controlType;
     }
 
     [NotNull] public string TagName { get; private set; }
@@ -961,7 +961,7 @@ namespace GridBox.Annotations
   {
     public AspRequiredAttributeAttribute([NotNull] string attribute)
     {
-      Attribute = attribute;
+        this.Attribute = attribute;
     }
 
     [NotNull] public string Attribute { get; private set; }
@@ -974,7 +974,7 @@ namespace GridBox.Annotations
 
     public AspTypePropertyAttribute(bool createConstructorReferences)
     {
-      CreateConstructorReferences = createConstructorReferences;
+        this.CreateConstructorReferences = createConstructorReferences;
     }
   }
 
@@ -983,7 +983,7 @@ namespace GridBox.Annotations
   {
     public RazorImportNamespaceAttribute([NotNull] string name)
     {
-      Name = name;
+        this.Name = name;
     }
 
     [NotNull] public string Name { get; private set; }
@@ -994,8 +994,8 @@ namespace GridBox.Annotations
   {
     public RazorInjectionAttribute([NotNull] string type, [NotNull] string fieldName)
     {
-      Type = type;
-      FieldName = fieldName;
+        this.Type = type;
+        this.FieldName = fieldName;
     }
 
     [NotNull] public string Type { get; private set; }
@@ -1007,7 +1007,7 @@ namespace GridBox.Annotations
   {
     public RazorDirectiveAttribute([NotNull] string directive)
     {
-      Directive = directive;
+        this.Directive = directive;
     }
 
     [NotNull] public string Directive { get; private set; }
