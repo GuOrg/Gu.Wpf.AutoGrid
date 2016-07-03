@@ -9,9 +9,23 @@
         Width="200"
         Height="100"
         mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+    </Window.Resources>
+
     <Window.DataContext>
         <demo:ViewModel />
     </Window.DataContext>
+
     <GroupBox>
         <autoRowGrid:Grid ColumnDefinitions="Auto *">
             <TextBox x:Name="R0C0"
