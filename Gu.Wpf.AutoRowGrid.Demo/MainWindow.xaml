@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:demo="clr-namespace:Gu.Wpf.AutoRowGrid.Demo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="MainWindow"
         Width="525"
         Height="350"
@@ -31,6 +31,10 @@
 
         <TabItem Header="last row fill">
             <demo:LastRowFillView />
+        </TabItem>
+
+        <TabItem Header="row height">
+            <demo:RowHeightView />
         </TabItem>
     </TabControl>
 </Window>

@@ -24,7 +24,9 @@
                 </autoRowGrid:Row>
                 <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
                     <Rectangle Grid.ColumnSpan="2" Fill="DarkKhaki" />
-                    <TextBlock  Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="last" />
+                    <TextBlock Grid.ColumnSpan="2"
+                               HorizontalAlignment="Center"
+                               Text="last" />
                 </autoRowGrid:Row>
             </autoRowGrid:Grid>
         </GroupBox>
@@ -37,7 +39,9 @@
                 </autoRowGrid:Row>
                 <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
                     <Rectangle Grid.ColumnSpan="2" Fill="RosyBrown" />
-                    <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="last" />
+                    <TextBlock Grid.ColumnSpan="2"
+                               HorizontalAlignment="Center"
+                               Text="last" />
                 </autoRowGrid:Row>
             </autoRowGrid:Grid>
         </GroupBox>

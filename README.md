@@ -86,6 +86,11 @@ If the last row should fill remaining space of if a starsized row should be adde
     </autoRowGrid:Row>
 </autoRowGrid:Grid>
 ```
+
+## RowHeight
+Set `RowHeight` to specify height of generated rows. If set to star `LastRowFill` will have no effect.
+
+
 # Sample xaml:
 
 ```xaml

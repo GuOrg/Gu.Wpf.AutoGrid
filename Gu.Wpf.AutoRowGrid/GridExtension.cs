@@ -25,6 +25,12 @@
         /// <summary> See <see cref="Grid.ColumnDefinitions"/> </summary>
         public ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions();
 
+        /// <summary>
+        /// Gets and sets a value for what height should be used when generating rows for the grid.
+        /// Default is Auto.
+        /// </summary>
+        public GridLength RowHeight { get; set; } = GridLength.Auto;
+
         /// <summary>Specifies if content of rows will get column index from index. Default is Increment.</summary>
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;
 
@@ -41,15 +47,18 @@
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             var grid = new Grid();
-            this.Rows.AutoIncrement(this.AutoIncrementation);
-            AddRowsRecursive(grid, this.Rows);
-            if (this.LastRowFill)
+            this.Rows.Inherit(this.AutoIncrementation, this.RowHeight);
+            AddRowsRecursive(grid, this.Rows, this.RowHeight);
+            if (grid.RowDefinitions.All(x => !x.Height.IsStar))
             {
-                grid.RowDefinitions[grid.RowDefinitions.Count - 1].Height = new GridLength(1, GridUnitType.Star);
-            }
-            else
-            {
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                if (this.LastRowFill)
+                {
+                    grid.RowDefinitions[grid.RowDefinitions.Count - 1].Height = new GridLength(1, GridUnitType.Star);
+                }
+                else
+                {
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                }
             }
 
             if (this.ColumnDefinitions != null)
@@ -63,7 +72,7 @@
             return grid;
         }
 
-        private static void AddRowsRecursive(Grid grid, IEnumerable<object> children)
+        private static void AddRowsRecursive(Grid grid, IEnumerable<object> children, GridLength rowHeight)
         {
             foreach (var item in children)
             {
@@ -71,10 +80,10 @@
                 if (uiElement != null)
                 {
                     grid.Children.Add(uiElement);
-                    var rows = Grid.GetRow(uiElement);
-                    while (rows > grid.RowDefinitions.Count - 1)
+                    var maxRow = Grid.GetRow(uiElement);
+                    while (maxRow > grid.RowDefinitions.Count - 1)
                     {
-                        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                        grid.RowDefinitions.Add(new RowDefinition { Height = rowHeight });
                     }
 
                     continue;
@@ -83,7 +92,7 @@
                 var rowItem = item as Row;
                 if (rowItem != null)
                 {
-                    grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                    grid.RowDefinitions.Add(new RowDefinition { Height = rowItem.RowHeight ?? rowHeight });
                     var rowIndex = grid.RowDefinitions.Count - 1;
                     foreach (var child in rowItem)
                     {
@@ -96,18 +105,19 @@
 
                 // this can't SO since WPF already checks that an element can only have one parent.
                 // letting it fail with the framework exception.
-                AddRowsRecursive(grid, (Rows)item);
+                var rows = (Rows)item;
+                AddRowsRecursive(grid, rows, rows.RowHeight?? GridLength.Auto);
             }
         }
 
         /// <summary>A collection of children for <see cref="GridExtension"/> </summary>
         public class ChildCollection : Collection<object>
         {
-            internal void AutoIncrement(AutoIncrementation autoIncrementation)
+            internal void Inherit(AutoIncrementation autoIncrementation, GridLength parentRowHeight)
             {
                 foreach (var row in this.Items.OfType<IRow>())
                 {
-                    row.AutoIncrement(autoIncrementation);
+                    row.Inherit(autoIncrementation, parentRowHeight);
                 }
             }
 

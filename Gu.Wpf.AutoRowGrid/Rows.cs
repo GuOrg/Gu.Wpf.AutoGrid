@@ -1,4 +1,6 @@
-﻿namespace Gu.Wpf.AutoRowGrid
+﻿using System.Windows;
+
+namespace Gu.Wpf.AutoRowGrid
 {
     using System.Collections.ObjectModel;
 
@@ -15,12 +17,16 @@
         public AutoIncrementation AutoIncrementation { get; set; } = AutoIncrementation.Inherit;
 
         /// <inheritdoc/>
-        public void AutoIncrement(AutoIncrementation parentAutoIncrementation)
+        public GridLength? RowHeight { get; set; }
+
+        /// <inheritdoc/>
+        public void Inherit(AutoIncrementation parentAutoIncrementation, GridLength parentRowHeight)
         {
+            this.RowHeight = this.RowHeight ?? parentRowHeight;
             var autoIncrementation = this.AutoIncrementation.CoerceWith(parentAutoIncrementation);
             foreach (var row in this)
             {
-                row.AutoIncrement(autoIncrementation);
+                row.Inherit(autoIncrementation, this.RowHeight.Value);
             }
         }
     }
