@@ -44,6 +44,10 @@ Is just a `List<UIElement>` that insers its contents on the next row in the grid
 </Window>
 ```
 
+Produces:
+
+![screenie](http://i.imgur.com/kAr50OX.png)
+
 # Sample with nesting:
 ```xaml
 <UserControl ...
@@ -93,5 +97,5 @@ Is just a `List<UIElement>` that insers its contents on the next row in the grid
 ```
 
 Produces:
+![screenie](http://i.imgur.com/GQifcug.png)
 
-![screenie](http://i.imgur.com/kAr50OX.png)
