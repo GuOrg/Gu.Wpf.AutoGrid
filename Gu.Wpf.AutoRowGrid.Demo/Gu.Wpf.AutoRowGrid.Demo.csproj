@@ -51,6 +51,9 @@
     <Compile Include="AutoIncrementColumnsView.xaml.cs">
       <DependentUpon>AutoIncrementColumnsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ColumnDefinitionsView.xaml.cs">
+      <DependentUpon>ColumnDefinitionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ColumnSpanView.xaml.cs">
       <DependentUpon>ColumnSpanView.xaml</DependentUpon>
     </Compile>
@@ -60,6 +63,10 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="AutoIncrementColumnsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColumnDefinitionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,4 @@
-namespace Gu.Wpf.AutoRowGrid.ColumnDefinitions
+namespace Gu.Wpf.AutoRowGrid
 {
     using System;
     using System.Collections.Generic;

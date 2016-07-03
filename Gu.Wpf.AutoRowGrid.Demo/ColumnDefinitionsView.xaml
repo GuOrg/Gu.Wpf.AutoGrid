@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="GridBox.ColumnDefinitionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:autoRowGrid="http://gu.se/AutoRowGrid"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:GridBox"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <local:ViewModel />
+    </UserControl.DataContext>
+    <!--  ReSharper disable Xaml.RedundantAttachedProperty  -->
+    <autoRowGrid:Grid AutoIncrementation="UseExplicitColumns">
+        <autoRowGrid:Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="70" />
+            <ColumnDefinition Width="*" MaxWidth="70" />
+        </autoRowGrid:Grid.ColumnDefinitions>
+        
+        <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
+            <Rectangle Grid.Column="0" Fill="Aqua" />
+            <TextBlock Grid.Column="0" Text="foo1" />
+            <TextBox Grid.Column="1" Text="{Binding Value1}" />
+        </autoRowGrid:Row>
+
+        <autoRowGrid:Rows Name="a bunch of rows">
+            <autoRowGrid:Row>
+                <TextBox Grid.Column="1" Text="{Binding Value2}" />
+                <TextBlock Grid.Column="0" Text="foo2" />
+            </autoRowGrid:Row>
+
+            <autoRowGrid:Row AutoIncrementation="AutoIncrement">
+                <Rectangle Grid.Column="0"
+                           autoRowGrid:AutoIncrement.AutoIncrementation="UseExplicitColumns"
+                           Fill="Aqua" />
+                <TextBlock Text="foo3" />
+                <TextBox Text="{Binding Value3}" />
+            </autoRowGrid:Row>
+
+            <autoRowGrid:Rows Name="a bunch of nested rows">
+                <autoRowGrid:Row>
+                    <TextBlock Grid.Column="0" Text="foo4" />
+                    <TextBox Grid.Column="1" Text="{Binding Value4}" />
+                </autoRowGrid:Row>
+
+                <autoRowGrid:Row AutoIncrementation="AutoIncrement">
+                    <TextBlock Grid.Column="0" Text="foo5" />
+                    <TextBox Grid.Column="1" Text="{Binding Value5}" />
+                    <Rectangle Grid.Column="0"
+                               autoRowGrid:AutoIncrement.AutoIncrementation="UseExplicitColumns"
+                               Fill="Aqua"
+                               Opacity="0.3" />
+                </autoRowGrid:Row>
+            </autoRowGrid:Rows>
+
+            <autoRowGrid:Row>
+                <TextBlock Grid.Column="0" Text="foo6" />
+                <TextBox Grid.Column="1" Text="{Binding Value6}" />
+            </autoRowGrid:Row>
+        </autoRowGrid:Rows>
+
+        <autoRowGrid:Row Name="last row" AutoIncrementation="AutoIncrement">
+            <TextBlock Text="foo7" />
+            <TextBox Text="{Binding Value7}" />
+        </autoRowGrid:Row>
+    </autoRowGrid:Grid>
+    <!--  ReSharper restore Xaml.RedundantAttachedProperty  -->
+</UserControl>

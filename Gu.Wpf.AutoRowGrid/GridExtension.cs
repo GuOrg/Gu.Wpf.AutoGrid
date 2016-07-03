@@ -19,7 +19,7 @@
         /// </summary>
         public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
 
-        public ColumnDefinitions.ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions.ColumnDefinitions();
+        public ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions();
 
         /// <summary>Specifies if content of rows will get column index from index. Default is Increment.</summary>
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;

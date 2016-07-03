@@ -1,4 +1,4 @@
-namespace Gu.Wpf.AutoRowGrid.ColumnDefinitions
+namespace Gu.Wpf.AutoRowGrid
 {
     using System;
     using System.ComponentModel;
@@ -31,7 +31,8 @@ namespace Gu.Wpf.AutoRowGrid.ColumnDefinitions
             if (text != null)
             {
                 var lengths = GridLengthsParser.Parse(typeDescriptorContext, cultureInfo, text);
-                var columnDefinitions = lengths.Select(gl => new System.Windows.Controls.ColumnDefinition { Width = gl });
+                var columnDefinitions = lengths.Select(gl => new System.Windows.Controls.ColumnDefinition { Width = gl })
+                                               .ToArray();
                 return new ColumnDefinitions(columnDefinitions);
             }
 

@@ -16,6 +16,14 @@
         <TabItem Header="nested">
             <gridBox:NestedRowsView />
         </TabItem>
+
+        <TabItem Header="explicit">
+            <gridBox:ExplicitColumnsView />
+        </TabItem>
+
+        <TabItem Header="verbose columndefinitions">
+            <gridBox:ColumnDefinitionsView />
+        </TabItem>
     </TabControl>
 </Window>
 

@@ -10,6 +10,29 @@ Small prototype for a less noisy WPF grid.
 # Grid
 Is a `MarkupExtension` that spits out a new vanilla WPF grid when `ProvideValue` is called.
 
+## ColumnDefinitions
+### Attribute style
+
+```xaml
+<autoRowGrid:Grid ColumnDefinitions="Auto * 50">
+    ...
+</autoRowGrid:Grid>
+```
+### Element style
+
+The designer may show a false negative error: `The attachable property 'ColumnDefinitions' was not found in type 'Grid'.`
+Not sure if #pragma can be used in xaml somehow.
+
+```xaml
+<autoRowGrid:Grid AutoIncrementation="UseExplicitColumns">
+    <autoRowGrid:Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" MinWidth="70" />
+        <ColumnDefinition Width="*" MaxWidth="70" />
+    </autoRowGrid:Grid.ColumnDefinitions>
+	 ...
+</autoRowGrid:Grid>
+```
+
 # Row 
 Is just a `List<UIElement>` that insers its contents on the next row in the grid. This avoids specifying `Grid.Row="n"`on multiple elements that are oin the same row and makes reordering trivial.
 

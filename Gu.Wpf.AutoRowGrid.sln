@@ -14,6 +14,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid", "Gu.Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid.Demo", "Gu.Wpf.AutoRowGrid.Demo\Gu.Wpf.AutoRowGrid.Demo.csproj", "{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{68C4DDDA-EAF5-49D1-941A-1245571C827D}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+		.paket\Readme.paket.md = .paket\Readme.paket.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
