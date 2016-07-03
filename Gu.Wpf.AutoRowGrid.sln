@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{68C4DDDA
 		.paket\Readme.paket.md = .paket\Readme.paket.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid.UiTests", "Gu.Wpf.AutoRowGrid.UiTests\Gu.Wpf.AutoRowGrid.UiTests.csproj", "{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

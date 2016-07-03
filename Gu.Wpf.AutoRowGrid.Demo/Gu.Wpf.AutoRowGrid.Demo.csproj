@@ -69,6 +69,12 @@
     <Compile Include="SandBoxView.xaml.cs">
       <DependentUpon>SandBoxView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\AutoRowsAndColumnsWindow.xaml.cs">
+      <DependentUpon>AutoRowsAndColumnsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\ExplicitRowsAndColumnsWindow.xaml.cs">
+      <DependentUpon>ExplicitRowsAndColumnsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel.cs" />
     <Page Include="AutoIncrementColumnsView.xaml">
       <SubType>Designer</SubType>
@@ -111,6 +117,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SandBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\AutoRowsAndColumnsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\ExplicitRowsAndColumnsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
