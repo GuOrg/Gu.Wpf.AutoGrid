@@ -30,7 +30,7 @@
         {
             var grid = new Grid();
             this.Rows.AutoIncrement(this.AutoIncrementation);
-            AddRows(grid, this.Rows);
+            AddRowsRecursive(grid, this.Rows);
 
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             if (this.ColumnDefinitions != null)
@@ -44,7 +44,7 @@
             return grid;
         }
 
-        private static void AddRows(Grid grid, IEnumerable<object> children)
+        private static void AddRowsRecursive(Grid grid, IEnumerable<object> children)
         {
             foreach (var item in children)
             {
@@ -75,7 +75,9 @@
                     continue;
                 }
 
-                AddRows(grid, (Rows)item);
+                // this can potentially SO but can't be written to do it from xaml.
+                // not gonna protect against it
+                AddRowsRecursive(grid, (Rows)item);
             }
         }
 
