@@ -64,7 +64,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AutoGrid.cs" />
-    <Compile Include="DoubleToGridLengthConverter.cs" />
+    <Compile Include="ColumnDefinitions.cs" />
+    <Compile Include="ColumnDefinitionsConverter.cs" />
+    <Compile Include="GridLengthsParser.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
