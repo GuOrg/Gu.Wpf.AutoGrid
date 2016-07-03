@@ -1,4 +1,5 @@
 # Gu.Wpf.AutoGrid
+[![Build status](https://ci.appveyor.com/api/projects/status/weieh2q82cc87ksr/branch/master?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-wpf-autogrid/branch/master)
 
 Small prototype for a less noisy WPF grid. 
 
