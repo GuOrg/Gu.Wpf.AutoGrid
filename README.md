@@ -70,6 +70,21 @@ Setting this on an element excludes it from the count so following elements are 
 The default for `AutoGrid` is `Increment` meaning children for `Row` get column index from position.
 The default for `Row`and `Rows` is `Inherit` meaning they inherit incrementation from parent going all the way up to the `GridExtension`
 
+## LastRowFill
+If the last row should fill remaining space of if a starsized row should be added after the last row.
+
+```xaml
+<autoRowGrid:Grid ColumnDefinitions="Auto *" LastRowFill="True">
+    <autoRowGrid:Row>
+        <TextBlock Text="foo1" />
+        <TextBox Text="{Binding Value1}" />
+    </autoRowGrid:Row>
+    <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
+        <Rectangle Grid.ColumnSpan="2" Fill="RosyBrown" />
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="last" />
+    </autoRowGrid:Row>
+</autoRowGrid:Grid>
+```
 # Sample xaml:
 
 ```xaml

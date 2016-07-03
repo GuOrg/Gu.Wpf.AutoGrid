@@ -28,6 +28,10 @@
         <TabItem Header="auto increment">
             <demo:AutoIncrementColumnsView />
         </TabItem>
+
+        <TabItem Header="last row fill">
+            <demo:LastRowFillView />
+        </TabItem>
     </TabControl>
 </Window>
 

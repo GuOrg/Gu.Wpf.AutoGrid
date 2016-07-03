@@ -60,6 +60,9 @@
     <Compile Include="ExplicitColumnsView.xaml.cs">
       <DependentUpon>ExplicitColumnsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LastRowFillView.xaml.cs">
+      <DependentUpon>LastRowFillView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel.cs" />
     <Page Include="AutoIncrementColumnsView.xaml">
       <SubType>Designer</SubType>
@@ -74,6 +77,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExplicitColumnsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LastRowFillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

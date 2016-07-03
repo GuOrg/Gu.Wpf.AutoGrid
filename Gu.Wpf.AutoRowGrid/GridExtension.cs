@@ -28,6 +28,12 @@
         /// <summary>Specifies if content of rows will get column index from index. Default is Increment.</summary>
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;
 
+        /// <summary>
+        /// Gets or sets a value indicating how the last row is handled.
+        /// If true tha last row gets Height = "*".
+        /// If false an extra row with  Height = "*" is added to fill remaining space.</summary>
+        public bool LastRowFill { get; set; } = false;
+
         /// <summary> The contents that are used to generating the grid. </summary>
         public ChildCollection Rows { get; set; } = new ChildCollection();
 
@@ -37,8 +43,15 @@
             var grid = new Grid();
             this.Rows.AutoIncrement(this.AutoIncrementation);
             AddRowsRecursive(grid, this.Rows);
+            if (this.LastRowFill)
+            {
+                grid.RowDefinitions[grid.RowDefinitions.Count - 1].Height = new GridLength(1, GridUnitType.Star);
+            }
+            else
+            {
+                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            }
 
-            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             if (this.ColumnDefinitions != null)
             {
                 foreach (var columnDefinition in this.ColumnDefinitions)
