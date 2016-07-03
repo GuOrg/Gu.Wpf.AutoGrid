@@ -16,10 +16,17 @@
             var autoIncrementation = this.AutoIncrementation.CoerceWith(parentAutoIncrementation);
             if (autoIncrementation == AutoIncrementation.AutoIncrement)
             {
+                var columnIndex = 0;
                 for (int i = 0; i < this.Items.Count; i++)
                 {
                     var uiElement = this.Items[i];
-                    Grid.SetColumn(uiElement, i);
+                    var elementIncrementation = uiElement.GetAutoIncrementation()
+                                                         .CoerceWith(autoIncrementation);
+                    if (elementIncrementation == AutoIncrementation.AutoIncrement)
+                    {
+                        Grid.SetColumn(uiElement, columnIndex);
+                        columnIndex++;
+                    }
                 }
             }
         }

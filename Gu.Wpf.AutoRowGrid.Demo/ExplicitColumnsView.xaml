@@ -24,6 +24,7 @@
             </autoRowGrid:Row>
 
             <autoRowGrid:Row AutoIncrementation="AutoIncrement">
+                <Rectangle Grid.Column="0" Fill="Aqua" autoRowGrid:AutoIncrement.AutoIncrementation="UseExplicitColumns" />
                 <TextBlock Text="foo3" />
                 <TextBox Text="{Binding Value3}" />
             </autoRowGrid:Row>
@@ -34,9 +35,10 @@
                     <TextBox Grid.Column="1" Text="{Binding Value4}" />
                 </autoRowGrid:Row>
 
-                <autoRowGrid:Row>
+                <autoRowGrid:Row AutoIncrementation="AutoIncrement">
                     <TextBlock Grid.Column="0" Text="foo5" />
                     <TextBox Grid.Column="1" Text="{Binding Value5}" />
+                    <Rectangle Grid.Column="0" Fill="Aqua" autoRowGrid:AutoIncrement.AutoIncrementation="UseExplicitColumns" Opacity="0.3" />
                 </autoRowGrid:Row>
             </autoRowGrid:Rows>
 
