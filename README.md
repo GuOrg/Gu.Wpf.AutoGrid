@@ -3,7 +3,7 @@
 Small prototype for a less noisy WPF grid. 
 
 # Grid
-Is a `MarkupExtension` that spits out a vanilla WPF grid when `ProvideValue`is called. A new grid is created for each call so caching it should be fine.
+Is a `MarkupExtension` that spits out a new vanilla WPF grid when `ProvideValue` is called.
 
 # Row 
 Is just a `List<UIElement>` that insers its contents on the next row in the grid. This avoids specifying `Grid.Row="n"`on multiple elements that are oin the same row and makes reordering trivial.
