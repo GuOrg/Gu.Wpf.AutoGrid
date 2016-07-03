@@ -18,27 +18,27 @@ Is just a `List<UIElement>` that insers its contents on the next row in the grid
         ...>
     <autoRowGrid:Grid ColumnDefinitions="Auto * 50">
         <TextBlock Grid.Row="0" Grid.Column="0" Text="foo1" />
-        <TextBox Grid.Row="0" Grid.Column="1" Text="bar1" />
+        <TextBox Grid.Row="0" Grid.Column="1"  Text="{Binding Value1}" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="foo2" />
-        <TextBox Grid.Row="1" Grid.Column="1" Text="bar2" />
-        
+        <TextBox Grid.Row="1" Grid.Column="1"  Text="{Binding Value2}" />
+
         <Rectangle Fill="Yellow" Height="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
 
         <autoRowGrid:Row>
-            <TextBlock Grid.Column="0" Text="foo3" />
-            <TextBox Grid.Column="1" Text="bar3" />
+            <TextBlock Text="foo3" />
+            <TextBox Text="{Binding Value3}" />
         </autoRowGrid:Row>
 
         <autoRowGrid:Row>
-            <TextBlock Grid.Column="0" Text="foo4" />
-            <TextBox Grid.Column="1" Text="bar4" />
+            <TextBlock Text="foo4" />
+            <TextBox Text="{Binding Value4}" />
         </autoRowGrid:Row>
 
         <Button Grid.Row="4" Grid.Column="2" Content="foo5" />
 
-        <autoRowGrid:Row>
-            <Rectangle Fill="Blue" Height="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+        <autoRowGrid:Row AutoIncrementation="UseExplicitColumns">
+            <Rectangle Fill="Blue" Height="15" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
         </autoRowGrid:Row>
     </autoRowGrid:Grid>
 </Window>
@@ -51,42 +51,42 @@ Is just a `List<UIElement>` that insers its contents on the next row in the grid
              ...>
     <autoRowGrid:Grid ColumnDefinitions="Auto *">
         <autoRowGrid:Row Name="first row">
-            <TextBlock Grid.Column="0" Text="foo1" />
-            <TextBox Grid.Column="1" Text="{Binding Value1}" />
+            <TextBlock Text="foo1" />
+            <TextBox Text="{Binding Value1}" />
         </autoRowGrid:Row>
 
         <autoRowGrid:Rows Name="a bunch of rows">
             <autoRowGrid:Row>
-                <TextBlock Grid.Column="0" Text="foo2" />
-                <TextBox Grid.Column="1" Text="{Binding Value2}" />
+                <TextBlock Text="foo2" />
+                <TextBox Text="{Binding Value2}" />
             </autoRowGrid:Row>
 
             <autoRowGrid:Row>
-                <TextBlock Grid.Column="0" Text="foo3" />
-                <TextBox Grid.Column="1" Text="{Binding Value3}" />
+                <TextBlock Text="foo3" />
+                <TextBox Text="{Binding Value3}" />
             </autoRowGrid:Row>
 
             <autoRowGrid:Rows Name="a bunch of nested rows">
                 <autoRowGrid:Row>
-                    <TextBlock Grid.Column="0" Text="foo4" />
-                    <TextBox Grid.Column="1" Text="{Binding Value4}" />
+                    <TextBlock Text="foo4" />
+                    <TextBox Text="{Binding Value4}" />
                 </autoRowGrid:Row>
 
                 <autoRowGrid:Row>
-                    <TextBlock Grid.Column="0" Text="foo5" />
-                    <TextBox Grid.Column="1" Text="{Binding Value5}" />
+                    <TextBlock Text="foo5" />
+                    <TextBox Text="{Binding Value5}" />
                 </autoRowGrid:Row>
             </autoRowGrid:Rows>
 
             <autoRowGrid:Row>
-                <TextBlock Grid.Column="0" Text="foo6" />
-                <TextBox Grid.Column="1" Text="{Binding Value6}" />
+                <TextBlock Text="foo6" />
+                <TextBox Text="{Binding Value6}" />
             </autoRowGrid:Row>
         </autoRowGrid:Rows>
 
         <autoRowGrid:Row Name="last row">
-            <TextBlock Grid.Column="0" Text="foo7" />
-            <TextBox Grid.Column="1" Text="{Binding Value7}" />
+            <TextBlock Text="foo7" />
+            <TextBox Text="{Binding Value7}" />
         </autoRowGrid:Row>
     </autoRowGrid:Grid>
 </UserControl>
