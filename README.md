@@ -28,7 +28,21 @@ If you want to set expllicit columns use UseExplicitColumns
 </autoRowGrid:Row>
 ```
 
-The default for `Row`and Rows` is `Inherit`meaning they inherit incrementation from parent going all the way up to the `GridExtension`
+Can also be set on a single `UIElement`: 
+
+```xaml
+<autoRowGrid:Row AutoIncrementation="AutoIncrement">
+    <Rectangle Grid.Column="0" Fill="Aqua" autoRowGrid:AutoIncrement.AutoIncrementation="UseExplicitColumns" />
+    <TextBlock Text="foo3" />
+    <TextBox Text="{Binding Value3}" />
+</autoRowGrid:Row>
+```
+
+Setting this on an element excludes it from the count so following elements are not affected.
+
+## Defaults
+The default for `AutoGrid` is `Increment` meaning children for `Row` get column index from position.
+The default for `Row`and `Rows` is `Inherit` meaning they inherit incrementation from parent going all the way up to the `GridExtension`
 
 # Sample xaml:
 
