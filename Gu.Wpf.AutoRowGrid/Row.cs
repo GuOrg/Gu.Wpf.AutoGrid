@@ -1,9 +1,9 @@
-﻿namespace Gu.Wpf.AutoGrid
+﻿namespace Gu.Wpf.AutoRowGrid
 {
     using System.Collections.ObjectModel;
     using System.Windows;
 
-    public class AtoGridRow : Collection<UIElement>
+    public class Row : Collection<UIElement>
     {
     }
 }

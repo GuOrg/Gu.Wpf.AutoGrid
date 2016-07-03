@@ -89,9 +89,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gu.Wpf.AutoGrid\Gu.Wpf.AutoGrid.csproj">
+    <ProjectReference Include="..\Gu.Wpf.AutoRowGrid\Gu.Wpf.AutoRowGrid.csproj">
       <Project>{af8cbe62-b44a-4e61-90f6-5453651c16a4}</Project>
-      <Name>Gu.Wpf.AutoGrid</Name>
+      <Name>Gu.Wpf.AutoRowGrid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

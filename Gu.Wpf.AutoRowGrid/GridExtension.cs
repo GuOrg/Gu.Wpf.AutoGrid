@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoGrid
+﻿namespace Gu.Wpf.AutoRowGrid
 {
     using System;
     using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@
 
     [MarkupExtensionReturnType(typeof(Grid))]
     [ContentProperty("Rows")]
-    public class AutoGrid : MarkupExtension
+    public class GridExtension : MarkupExtension
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -28,7 +28,7 @@
                     continue;
                 }
 
-                var agr = (AtoGridRow)row;
+                var agr = (Row)row;
                 grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                 var rowIndex = grid.RowDefinitions.Count - 1;
                 foreach (var child in agr)
@@ -70,12 +70,12 @@
 
             private static void AssertItem(object item)
             {
-                if (item is AtoGridRow || item is UIElement)
+                if (item is Row || item is UIElement)
                 {
                     return;
                 }
 
-                throw new ArgumentException($"Only items of type {typeof(UIElement).FullName} or {typeof(AtoGridRow).Name} are allowed.");
+                throw new ArgumentException($"Only items of type {typeof(UIElement).FullName} or {typeof(Row).Name} are allowed.");
             }
         }
     }
