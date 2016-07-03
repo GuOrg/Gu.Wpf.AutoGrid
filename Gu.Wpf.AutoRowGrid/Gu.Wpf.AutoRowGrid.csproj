@@ -41,6 +41,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRow.cs" />
     <Compile Include="Row.cs" />
     <Compile Include="GridExtension.cs" />
     <Compile Include="ColumnDefinitions\ColumnDefinitions.cs" />
@@ -50,6 +51,7 @@
       <SubType>Code</SubType>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <Compile Include="Rows.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="paket.template" />

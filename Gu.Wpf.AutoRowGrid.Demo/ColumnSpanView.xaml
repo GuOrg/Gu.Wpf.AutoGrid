@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="GridBox.ColumnSpanView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GridBox"
+             xmlns:autoRowGrid="http://gu.se/AutoRowGrid"
+             mc:Ignorable="d" >
+    <UserControl.DataContext>
+        <local:ViewModel />
+    </UserControl.DataContext>
+    <autoRowGrid:Grid ColumnDefinitions="Auto * 50">
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="foo1" />
+        <TextBox Grid.Row="0" Grid.Column="1"  Text="{Binding Value1}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="foo2" />
+        <TextBox Grid.Row="1" Grid.Column="1"  Text="{Binding Value2}" />
+
+        <Rectangle Fill="Yellow" Height="15" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+
+        <autoRowGrid:Row>
+            <TextBlock Grid.Column="0" Text="foo3" />
+            <TextBox Grid.Column="1"  Text="{Binding Value3}" />
+        </autoRowGrid:Row>
+
+        <autoRowGrid:Row>
+            <TextBlock Grid.Column="0" Text="foo4" />
+            <TextBox Grid.Column="1"  Text="{Binding Value4}" />
+        </autoRowGrid:Row>
+
+        <Button Grid.Row="4" Grid.Column="2" Content="foo5" />
+
+        <autoRowGrid:Row>
+            <Rectangle Fill="Blue" Height="15" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
+        </autoRowGrid:Row>
+    </autoRowGrid:Grid>
+</UserControl>
