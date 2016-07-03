@@ -38,6 +38,7 @@ Not sure if #pragma can be used in xaml somehow.
 Is just a `List<UIElement>` that insers its contents on the next row in the grid. This avoids specifying `Grid.Row="n"`on multiple elements that are oin the same row and makes reordering trivial.
 
 # AutoIncrementation
+
 By default children of a `Row` get column index from their position:
 ```xaml
 <autoRowGrid:Row Name="first row">
@@ -88,8 +89,23 @@ If the last row should fill remaining space of if a starsized row should be adde
 ```
 
 ## RowHeight
+
 Set `RowHeight` to specify height of generated rows. If set to star `LastRowFill` will have no effect.
 
+Or specify on individual rows like this:
+```xaml
+<autoRowGrid:Grid ColumnDefinitions="* *">
+    <autoRowGrid:Row Height="25">
+        <Rectangle Fill="Yellow" />
+        <Rectangle Fill="Blue" />
+    </autoRowGrid:Row>
+
+    <autoRowGrid:Row Height="40">
+        <Rectangle Fill="Red" />
+        <Rectangle Fill="Yellow" />
+    </autoRowGrid:Row>
+</autoRowGrid:Grid>
+```
 
 # Sample xaml:
 

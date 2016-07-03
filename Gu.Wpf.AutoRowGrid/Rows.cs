@@ -17,16 +17,16 @@ namespace Gu.Wpf.AutoRowGrid
         public AutoIncrementation AutoIncrementation { get; set; } = AutoIncrementation.Inherit;
 
         /// <inheritdoc/>
-        public GridLength? RowHeight { get; set; }
+        public GridLength? Height { get; set; }
 
         /// <inheritdoc/>
         public void Inherit(AutoIncrementation parentAutoIncrementation, GridLength parentRowHeight)
         {
-            this.RowHeight = this.RowHeight ?? parentRowHeight;
+            this.Height = this.Height ?? parentRowHeight;
             var autoIncrementation = this.AutoIncrementation.CoerceWith(parentAutoIncrementation);
             foreach (var row in this)
             {
-                row.Inherit(autoIncrementation, this.RowHeight.Value);
+                row.Inherit(autoIncrementation, this.Height.Value);
             }
         }
     }

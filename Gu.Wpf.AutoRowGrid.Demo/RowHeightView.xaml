@@ -13,6 +13,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <GroupBox Grid.Row="0" Header="RowHeight=&quot;(default)&quot;">
             <autoRowGrid:Grid ColumnDefinitions="* *">
@@ -24,6 +25,10 @@
                            Grid.Column="1"
                            Height="25"
                            Fill="Blue" />
+                <Rectangle Grid.Row="2"
+                           Grid.Column="0"
+                           Height="25"
+                           Fill="Red" />
             </autoRowGrid:Grid>
         </GroupBox>
 
@@ -61,6 +66,19 @@
                 <Rectangle Grid.Row="1"
                            Grid.Column="1"
                            Fill="Blue" />
+            </autoRowGrid:Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="4" Header="Height on individual rows">
+            <autoRowGrid:Grid ColumnDefinitions="* *">
+                <autoRowGrid:Row Height="25">
+                    <Rectangle Fill="Yellow" />
+                    <Rectangle Fill="Blue" />
+                </autoRowGrid:Row>
+                <autoRowGrid:Row Height="40">
+                    <Rectangle Fill="Red" />
+                    <Rectangle Fill="Yellow" />
+                </autoRowGrid:Row>
             </autoRowGrid:Grid>
         </GroupBox>
     </Grid>

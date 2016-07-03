@@ -19,7 +19,7 @@ namespace Gu.Wpf.AutoRowGrid
         /// Gets and sets a value for what height should be used when generating rows for the grid.
         /// Default is null meaning it inherits from parent.
         /// </summary>
-        GridLength? RowHeight { get; set; }
+        GridLength? Height { get; set; }
 
         /// <summary>
         /// Update all nested children column indices.

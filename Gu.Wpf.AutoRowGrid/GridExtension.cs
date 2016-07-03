@@ -92,7 +92,7 @@
                 var rowItem = item as Row;
                 if (rowItem != null)
                 {
-                    grid.RowDefinitions.Add(new RowDefinition { Height = rowItem.RowHeight ?? rowHeight });
+                    grid.RowDefinitions.Add(new RowDefinition { Height = rowItem.Height ?? rowHeight });
                     var rowIndex = grid.RowDefinitions.Count - 1;
                     foreach (var child in rowItem)
                     {
@@ -106,7 +106,7 @@
                 // this can't SO since WPF already checks that an element can only have one parent.
                 // letting it fail with the framework exception.
                 var rows = (Rows)item;
-                AddRowsRecursive(grid, rows, rows.RowHeight?? GridLength.Auto);
+                AddRowsRecursive(grid, rows, rows.Height?? GridLength.Auto);
             }
         }
 

@@ -17,12 +17,12 @@
         public AutoIncrementation AutoIncrementation { get; set; } = AutoIncrementation.Inherit;
 
         /// <inheritdoc/>
-        public GridLength? RowHeight { get; set; }
+        public GridLength? Height { get; set; }
 
         /// <inheritdoc/>
         public void Inherit(AutoIncrementation parentAutoIncrementation, GridLength parentRowHeight)
         {
-            this.RowHeight = this.RowHeight ?? parentRowHeight;
+            this.Height = this.Height ?? parentRowHeight;
             var autoIncrementation = this.AutoIncrementation.CoerceWith(parentAutoIncrementation);
             var columnIndex = 0;
             for (int i = 0; i < this.Items.Count; i++)
