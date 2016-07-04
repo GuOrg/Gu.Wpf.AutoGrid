@@ -7,12 +7,12 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
 
     public static class WindowExt
     {
-        public static string GetTextBoxPosition(this Window window, string textBoxName)
+        public static string GetItemPosition(this Window window, string name)
         {
             var groupBox = window.Get<GroupBox>();
-            var textBox = groupBox.Get<TextBox>(textBoxName);
-            var topLeft = textBox.Bounds.TopLeft - groupBox.Bounds.TopLeft;
-            var bottomRight = textBox.Bounds.BottomRight - groupBox.Bounds.TopLeft;
+            var item = groupBox.Get<UIItem>(name);
+            var topLeft = item.Bounds.TopLeft - groupBox.Bounds.TopLeft;
+            var bottomRight = item.Bounds.BottomRight - groupBox.Bounds.TopLeft;
             return $"{topLeft.ToString(CultureInfo.InvariantCulture)} {bottomRight.ToString(CultureInfo.InvariantCulture)}";
         }
     }
