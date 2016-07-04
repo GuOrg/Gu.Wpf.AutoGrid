@@ -19,7 +19,7 @@
             <TextBox x:Name="R0C0"
                      Grid.Row="0"
                      Grid.Column="0"
-                     Style="{StaticResource LabelTextBox}"
+                     Style="{StaticResource LabelTextBoxStyle}"
                      Text="foo1" />
             <TextBox x:Name="R0C1"
                      Grid.Row="0"
@@ -29,7 +29,7 @@
             <TextBox x:Name="R1C0"
                      Grid.Row="1"
                      Grid.Column="0"
-                     Style="{StaticResource LabelTextBox}"
+                     Style="{StaticResource LabelTextBoxStyle}"
                      Text="foo2" />
             <TextBox x:Name="R1C1"
                      Grid.Row="1"

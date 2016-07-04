@@ -36,6 +36,8 @@ Not sure if #pragma can be used in xaml somehow.
 
 # Row 
 Is just a `List<UIElement>` that insers its contents on the next row in the grid. This avoids specifying `Grid.Row="n"`on multiple elements that are oin the same row and makes reordering trivial.
+Note that `Row`only exists in xaml for grouping elements on the same row. The idea is that it will making rearranging & reasoning about the grid easier.
+Using a row the need for renumbering Grid.Row when moving things goes away.
 
 # AutoIncrementation
 
