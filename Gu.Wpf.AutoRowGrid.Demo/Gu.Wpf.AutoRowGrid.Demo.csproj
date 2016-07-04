@@ -69,6 +69,9 @@
     <Compile Include="SandBoxView.xaml.cs">
       <DependentUpon>SandBoxView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\AutoRowsAndColumnsExplicitHeightWindow.xaml.cs">
+      <DependentUpon>AutoRowsAndColumnsExplicitHeightWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\AutoRowsAndColumnsWindow.xaml.cs">
       <DependentUpon>AutoRowsAndColumnsWindow.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SandBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\AutoRowsAndColumnsExplicitHeightWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
