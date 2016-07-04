@@ -84,7 +84,9 @@
     <Compile Include="UiTestWindows\ExplicitRowsAndColumnsLastRowWindow.xaml.cs">
       <DependentUpon>ExplicitRowsAndColumnsLastRowWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\TestTextBox.cs" />
     <Compile Include="UiTestWindows\TextBoxView.cs" />
+    <Compile Include="UiTestWindows\VisualTreeExt.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="AutoIncrementColumnsView.xaml">
       <SubType>Designer</SubType>
