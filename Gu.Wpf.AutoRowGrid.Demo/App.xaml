@@ -9,6 +9,19 @@
         </Style>
 
         <Style x:Key="UiTestGroupBox" TargetType="{x:Type GroupBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="BorderThickness" Value="1" />
+                </Style>
+
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="Padding" Value="0" />
+                </Style>
+            </Style.Resources>
+            
             <Setter Property="TextElement.FontSize" Value="12"></Setter>
             <Setter Property="TextElement.FontFamily" Value="Arial"></Setter>
             <Setter Property="Template">
@@ -18,11 +31,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-
-        <Style x:Key="UiTestTextBox" TargetType="{x:Type TextBox}">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="BorderThickness" Value="1" />
         </Style>
     </Application.Resources>
 </Application>
