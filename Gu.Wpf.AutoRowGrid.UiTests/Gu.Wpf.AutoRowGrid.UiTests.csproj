@@ -47,6 +47,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AutoRowsAndColumnsExplicitHeightTests.cs" />
+    <Compile Include="AutoRowsAndColumnsExplicitStarHeightTests.cs" />
     <Compile Include="AutoRowsAndColumnsWindowTests.cs" />
     <Compile Include="AutoRowsLastRowFillTests.cs" />
     <Compile Include="ExplicitRowsAndColumnsLastRowFillTests.cs" />
