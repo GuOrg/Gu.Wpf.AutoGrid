@@ -17,8 +17,8 @@
                 Arguments = args,
                 UseShellExecute = false,
                 //CreateNoWindow = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true
+                //RedirectStandardOutput = true,
+                //RedirectStandardError = true
             };
             return processStartInfo;
         }
