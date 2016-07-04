@@ -30,9 +30,12 @@
                     <Setter Property="Padding" Value="0" />
                 </Style>
             </Style.Resources>
+            
             <Setter Property="demo:TestElement.AllNestedMarginsAndPaddings" Value="0,0" />
             <Setter Property="TextElement.FontSize" Value="12" />
             <Setter Property="TextElement.FontFamily" Value="Arial" />
+            <Setter Property="TextElement.FontStyle" Value="Normal" />
+            <Setter Property="TextElement.FontWeight" Value="Normal" />
             <Setter Property="Margin" Value="0" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="Template">
