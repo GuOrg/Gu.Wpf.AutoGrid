@@ -6,7 +6,7 @@
     {
         public AutoIncrementColumnsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

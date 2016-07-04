@@ -9,7 +9,7 @@
     {
         public AutoRowsAndColumnsWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

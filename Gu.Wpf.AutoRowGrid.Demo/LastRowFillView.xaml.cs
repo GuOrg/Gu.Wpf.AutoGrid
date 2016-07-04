@@ -6,7 +6,7 @@
     {
         public LastRowFillView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

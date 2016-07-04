@@ -9,7 +9,7 @@
     {
         public ExplicitRowsAndColumnsWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

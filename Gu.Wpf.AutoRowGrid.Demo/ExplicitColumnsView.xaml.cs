@@ -6,7 +6,7 @@
     {
         public ExplicitColumnsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

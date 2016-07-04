@@ -6,7 +6,7 @@
     {
         public SandBoxView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

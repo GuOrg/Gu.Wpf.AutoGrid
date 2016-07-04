@@ -6,7 +6,7 @@
     {
         public ColumnDefinitionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -5,6 +5,7 @@
     public class ExplicitRowsAndColumnsTests : WindowTest
     {
         public override string Title { get; } = "ExplicitRowsAndColumnsWindow";
+
         [Test]
         public void Bounds()
         {

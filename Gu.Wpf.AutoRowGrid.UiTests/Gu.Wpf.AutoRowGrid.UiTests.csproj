@@ -47,6 +47,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AutoRowsAndColumnsWindowTests.cs" />
+    <Compile Include="AutoRowsLastRowFillTests.cs" />
+    <Compile Include="ExplicitRowsAndColumnsLastRowFillTests.cs" />
     <Compile Include="ExplicitRowsAndColumnsTests.cs" />
     <Compile Include="Helpers\Info.cs" />
     <Compile Include="Helpers\WindowExt.cs" />
