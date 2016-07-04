@@ -1,3 +1,4 @@
+#pragma warning disable SA1600 // Elements must be documented
 namespace Gu.Wpf.AutoRowGrid
 {
     using System;
@@ -12,7 +13,7 @@ namespace Gu.Wpf.AutoRowGrid
         private static readonly GridLengthConverter GridLengthConverter = new GridLengthConverter();
         private static readonly char[] SeparatorChars = { ',', ' ' };
 
-        public static IEnumerable<GridLength> Parse(ITypeDescriptorContext typeDescriptorContext, CultureInfo cultureInfo, string text)
+        internal static IEnumerable<GridLength> Parse(ITypeDescriptorContext typeDescriptorContext, CultureInfo cultureInfo, string text)
         {
             try
             {

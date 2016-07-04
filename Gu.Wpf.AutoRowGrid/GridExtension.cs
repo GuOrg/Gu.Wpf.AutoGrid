@@ -116,6 +116,7 @@
         /// <summary>A collection of children for <see cref="GridExtension"/> </summary>
         public class ChildCollection : Collection<object>
         {
+            /// <summary>Update all nested children recursively with the settings from parent.</summary>
             internal void Inherit(AutoIncrementation autoIncrementation, GridLength parentRowHeight)
             {
                 foreach (var row in this.Items.OfType<IRow>())

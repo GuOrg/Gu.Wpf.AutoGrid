@@ -26,11 +26,12 @@
             return (AutoIncrementation)element.GetValue(AutoIncrementationProperty);
         }
 
-        internal static AutoIncrementation CoerceWith(this AutoIncrementation self, AutoIncrementation parent)
+        /// <summary>If self is Inherit use <paramref name="parentValue"/></summary>
+        internal static AutoIncrementation CoerceWith(this AutoIncrementation self, AutoIncrementation parentValue)
         {
             if (self == AutoIncrementation.Inherit)
             {
-                return parent;
+                return parentValue;
             }
 
             return self;
