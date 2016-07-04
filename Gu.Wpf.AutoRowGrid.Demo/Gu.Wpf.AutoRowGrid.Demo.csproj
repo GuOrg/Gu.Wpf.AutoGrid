@@ -87,6 +87,12 @@
     <Compile Include="UiTestWindows\ExplicitRowsAndColumnsLastRowWindow.xaml.cs">
       <DependentUpon>ExplicitRowsAndColumnsLastRowWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\NestedRowsExplicitHeightWindow.xaml.cs">
+      <DependentUpon>NestedRowsExplicitHeightWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\NestedRowsWindow.xaml.cs">
+      <DependentUpon>NestedRowsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\TestElement.cs" />
     <Compile Include="UiTestWindows\TextBoxView.cs" />
     <Compile Include="UiTestWindows\VisualTreeExt.cs" />
@@ -156,6 +162,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\ExplicitRowsAndColumnsLastRowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\NestedRowsExplicitHeightWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\NestedRowsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

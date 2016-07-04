@@ -54,6 +54,8 @@
     <Compile Include="ExplicitRowsAndColumnsTests.cs" />
     <Compile Include="Helpers\Info.cs" />
     <Compile Include="Helpers\WindowExt.cs" />
+    <Compile Include="NestedRowsExplicitHeightTests.cs" />
+    <Compile Include="NestedRowsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WindowTest.cs" />
   </ItemGroup>
