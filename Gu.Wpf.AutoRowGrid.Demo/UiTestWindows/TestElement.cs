@@ -6,24 +6,24 @@
     using System.Windows.Controls;
     using System.Windows.Threading;
 
-    public static class TestTextBox
+    public static class TestElement
     {
         public static readonly DependencyProperty AllNestedMarginsAndPaddingsProperty = DependencyProperty.RegisterAttached(
             "AllNestedMarginsAndPaddings",
             typeof(Thickness?),
-            typeof(TestTextBox),
+            typeof(TestElement),
             new PropertyMetadata(
                 default(Thickness?),
                 OnAllNestedMarginsAndPaddingsChanged));
 
-        public static void SetAllNestedMarginsAndPaddings(this TextBox element, Thickness? value)
+        public static void SetAllNestedMarginsAndPaddings(this FrameworkElement element, Thickness? value)
         {
             element.SetValue(AllNestedMarginsAndPaddingsProperty, value);
         }
 
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(TextBox))]
-        public static Thickness? GetAllNestedMarginsAndPaddings(this TextBox element)
+        [AttachedPropertyBrowsableForType(typeof(FrameworkElement))]
+        public static Thickness? GetAllNestedMarginsAndPaddings(this FrameworkElement element)
         {
             return (Thickness?)element.GetValue(AllNestedMarginsAndPaddingsProperty);
         }
@@ -31,41 +31,41 @@
 
         private static void OnAllNestedMarginsAndPaddingsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var textBox = (TextBox)d;
+            var textBox = (FrameworkElement)d;
             OnTextBoxViewMarginChanged(textBox, (Thickness?)e.NewValue);
         }
 
-        private static void OnTextBoxViewMarginChanged(TextBox textBox, Thickness? margin)
+        private static void OnTextBoxViewMarginChanged(FrameworkElement textBox, Thickness? thickness)
         {
             if (!textBox.IsLoaded)
             {
                 textBox.Dispatcher.BeginInvoke(
                     DispatcherPriority.Loaded,
-                    new Action(() => OnTextBoxViewMarginChanged(textBox, margin)));
+                    new Action(() => OnTextBoxViewMarginChanged(textBox, thickness)));
                 return;
             }
 
             foreach (var child in textBox.NestedChildren().OfType<FrameworkElement>())
             {
-                if (margin == null)
+                if (thickness == null)
                 {
                     child.ClearValue(FrameworkElement.MarginProperty);
                 }
                 else
                 {
-                    child.SetValue(FrameworkElement.MarginProperty, margin.Value);
+                    child.SetValue(FrameworkElement.MarginProperty, thickness.Value);
                 }
             }
 
             foreach (var child in textBox.NestedChildren().OfType<Control>())
             {
-                if (margin == null)
+                if (thickness == null)
                 {
                     child.ClearValue(Control.PaddingProperty);
                 }
                 else
                 {
-                    child.SetValue(Control.PaddingProperty, margin.Value);
+                    child.SetValue(Control.PaddingProperty, thickness.Value);
                 }
             }
         }

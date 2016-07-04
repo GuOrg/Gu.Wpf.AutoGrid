@@ -17,7 +17,7 @@
                     <Setter Property="Padding" Value="0" />
                     <Setter Property="BorderThickness" Value="1" />
                     <!--<Setter Property="demo:TextBoxView.Margin" Value="1,0" />-->
-                    <Setter Property="demo:TestTextBox.AllNestedMarginsAndPaddings" Value="0,0" />
+
                 </Style>
 
                 <Style TargetType="{x:Type ScrollViewer}">
@@ -30,7 +30,7 @@
                     <Setter Property="Padding" Value="0" />
                 </Style>
             </Style.Resources>
-
+            <Setter Property="demo:TestElement.AllNestedMarginsAndPaddings" Value="0,0" />
             <Setter Property="TextElement.FontSize" Value="12" />
             <Setter Property="TextElement.FontFamily" Value="Arial" />
             <Setter Property="Margin" Value="0" />
