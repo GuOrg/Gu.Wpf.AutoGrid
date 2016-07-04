@@ -9,10 +9,10 @@
         [Test]
         public void Bounds()
         {
-            Assert.AreEqual("0,0 34,22", this.Window.GetTextBoxPosition("R0C0"));
-            Assert.AreEqual("34,0 150,22", this.Window.GetTextBoxPosition("R0C1"));
-            Assert.AreEqual("0,22 34,44", this.Window.GetTextBoxPosition("R1C0"));
-            Assert.AreEqual("34,22 150,44", this.Window.GetTextBoxPosition("R1C1"));
+            Assert.AreEqual("0,0 33,20", this.Window.GetTextBoxPosition("R0C0"));
+            Assert.AreEqual("33,0 150,20", this.Window.GetTextBoxPosition("R0C1"));
+            Assert.AreEqual("0,20 33,40", this.Window.GetTextBoxPosition("R1C0"));
+            Assert.AreEqual("33,20 150,40", this.Window.GetTextBoxPosition("R1C1"));
         }
     }
 }

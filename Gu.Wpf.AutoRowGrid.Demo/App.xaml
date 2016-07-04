@@ -10,7 +10,7 @@
 
         <Style x:Key="UiTestGroupBox" TargetType="{x:Type GroupBox}">
             <Setter Property="TextElement.FontSize" Value="12"></Setter>
-            <Setter Property="TextElement.FontFamily" Value="Segoe UI"></Setter>
+            <Setter Property="TextElement.FontFamily" Value="Arial"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type GroupBox}">
