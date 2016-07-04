@@ -9,24 +9,13 @@
         Width="200"
         Height="100"
         mc:Ignorable="d">
-    <Window.Resources>
-        <Style TargetType="{x:Type GroupBox}">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="BorderThickness" Value="1" />
-        </Style>
-
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="BorderThickness" Value="1" />
-        </Style>
-    </Window.Resources>
 
     <Window.DataContext>
         <demo:ViewModel />
     </Window.DataContext>
 
-    <GroupBox>
+    <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
+    <GroupBox  Width="150" Style="{StaticResource UiTestGroupBox}">
         <autoRowGrid:Grid ColumnDefinitions="Auto *">
             <TextBox x:Name="R0C0"
                      Grid.Row="0"
@@ -47,4 +36,5 @@
                      Text="{Binding Value2}" />
         </autoRowGrid:Grid>
     </GroupBox>
+    <!-- ReSharper restore Xaml.RedundantAttachedProperty -->
 </Window>
