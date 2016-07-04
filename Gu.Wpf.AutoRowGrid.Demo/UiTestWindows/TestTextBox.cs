@@ -56,6 +56,18 @@
                     child.SetValue(FrameworkElement.MarginProperty, margin.Value);
                 }
             }
+
+            foreach (var child in textBox.NestedChildren().OfType<Control>())
+            {
+                if (margin == null)
+                {
+                    child.ClearValue(Control.PaddingProperty);
+                }
+                else
+                {
+                    child.SetValue(Control.PaddingProperty, margin.Value);
+                }
+            }
         }
     }
 }
