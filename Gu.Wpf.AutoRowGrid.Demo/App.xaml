@@ -1,7 +1,9 @@
 ﻿<Application x:Class="Gu.Wpf.AutoRowGrid.Demo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             xmlns:demo="clr-namespace:Gu.Wpf.AutoRowGrid.Demo">
+    <!--<Application.StartupUri>UiTestWindows/ExplicitRowsAndColumnsLastRowWindow.xaml</Application.StartupUri>-->
+    <Application.StartupUri>MainWindow.xaml</Application.StartupUri>
     <Application.Resources>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -14,16 +16,21 @@
                     <Setter Property="Margin" Value="0" />
                     <Setter Property="Padding" Value="0" />
                     <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="demo:TextBoxView.Margin" Value="2,0" />
                 </Style>
+
+                <!--<Style TargetType="{x:Static demo:TextBoxViewStatic.Type}">
+                    <Setter Property="Margin" Value="0" />
+                </Style>-->
 
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Margin" Value="0" />
                     <Setter Property="Padding" Value="0" />
                 </Style>
             </Style.Resources>
-            
-            <Setter Property="TextElement.FontSize" Value="12"></Setter>
-            <Setter Property="TextElement.FontFamily" Value="Arial"></Setter>
+
+            <Setter Property="TextElement.FontSize" Value="12" />
+            <Setter Property="TextElement.FontFamily" Value="Arial" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type GroupBox}">

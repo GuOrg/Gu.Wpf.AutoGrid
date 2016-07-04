@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Gu.Wpf.AutoRowGrid.Demo
+﻿namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System;
     using System.Windows;
