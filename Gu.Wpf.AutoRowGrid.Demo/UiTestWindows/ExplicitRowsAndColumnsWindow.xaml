@@ -13,12 +13,13 @@
         <demo:ViewModel />
     </Window.DataContext>
 
-    <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
-    <GroupBox  Width="150" Style="{StaticResource UiTestGroupBox}">
+    <!--  ReSharper disable Xaml.RedundantAttachedProperty  -->
+    <GroupBox Width="150" Style="{StaticResource UiTestGroupBox}">
         <autoRowGrid:Grid ColumnDefinitions="Auto *">
             <TextBox x:Name="R0C0"
                      Grid.Row="0"
                      Grid.Column="0"
+                     Style="{StaticResource LabelTextBox}"
                      Text="foo1" />
             <TextBox x:Name="R0C1"
                      Grid.Row="0"
@@ -28,6 +29,7 @@
             <TextBox x:Name="R1C0"
                      Grid.Row="1"
                      Grid.Column="0"
+                     Style="{StaticResource LabelTextBox}"
                      Text="foo2" />
             <TextBox x:Name="R1C1"
                      Grid.Row="1"
@@ -35,5 +37,5 @@
                      Text="{Binding Value2}" />
         </autoRowGrid:Grid>
     </GroupBox>
-    <!-- ReSharper restore Xaml.RedundantAttachedProperty -->
+    <!--  ReSharper restore Xaml.RedundantAttachedProperty  -->
 </Window>

@@ -16,12 +16,16 @@
     <GroupBox Width="150" Style="{StaticResource UiTestGroupBox}">
         <autoRowGrid:Grid ColumnDefinitions="Auto *">
             <autoRowGrid:Row>
-                <TextBox x:Name="R0C0" Text="foo1" />
+                <TextBox x:Name="R0C0"
+                         Style="{StaticResource LabelTextBox}"
+                         Text="foo1" />
                 <TextBox x:Name="R0C1" Text="{Binding Value1}" />
             </autoRowGrid:Row>
 
             <autoRowGrid:Row>
-                <TextBox x:Name="R1C0" Text="foo2" />
+                <TextBox x:Name="R1C0"
+                         Style="{StaticResource LabelTextBox}"
+                         Text="foo2" />
                 <TextBox x:Name="R1C1" Text="{Binding Value2}" />
             </autoRowGrid:Row>
         </autoRowGrid:Grid>
