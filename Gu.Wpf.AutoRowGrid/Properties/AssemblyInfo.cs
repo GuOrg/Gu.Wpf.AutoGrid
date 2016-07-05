@@ -7,7 +7,7 @@ using System.Windows.Markup;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Gu.Wpf.AutoRowGrid")]
-[assembly: AssemblyDescription("Small lib for using WPF grid less painful.")]
+[assembly: AssemblyDescription("Small lib for making use of WPF's grid less painful.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Johan Larsson")]
 [assembly: AssemblyProduct("Gu.Wpf.AutoRowGrid")]
