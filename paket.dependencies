@@ -1,6 +1,15 @@
 source http://www.nuget.org/api/v2/
+framework >= net4
 
-nuget NUnit
-nuget TestStack.White
-nuget JetBrains.Annotations
-nuget StyleCop.Analyzers
+group Analyzers
+  source http://www.nuget.org/api/v2/
+  framework >= net4
+  nuget JetBrains.Annotations
+  nuget StyleCop.Analyzers
+  nuget WpfAnalyzers
+
+group Test
+  source http://www.nuget.org/api/v2/
+  framework >= net45
+  nuget NUnit
+  nuget TestStack.White

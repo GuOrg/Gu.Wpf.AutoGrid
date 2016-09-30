@@ -4,4 +4,6 @@ projectUrl https://github.com/JohanLarsson/Gu.Wpf.AutoGrid
 licenseUrl http://opensource.org/licenses/MIT
 
 excludeddependencies
+  JetBrains.Annotations
   StyleCop.Analyzers
+  WpfAnalyzers
