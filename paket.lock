@@ -1,4 +1,4 @@
-
+FRAMEWORK: >= NET40
 
 GROUP Analyzers
 FRAMEWORK: >= NET45
