@@ -28,7 +28,6 @@
             return (Thickness?)element.GetValue(AllNestedMarginsAndPaddingsProperty);
         }
 
-
         private static void OnAllNestedMarginsAndPaddingsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var textBox = (FrameworkElement)d;
@@ -53,7 +52,7 @@
                 }
                 else
                 {
-                    child.SetValue(FrameworkElement.MarginProperty, thickness.Value);
+                    child.SetCurrentValue(FrameworkElement.MarginProperty, thickness.Value);
                 }
             }
 
@@ -65,7 +64,7 @@
                 }
                 else
                 {
-                    child.SetValue(Control.PaddingProperty, thickness.Value);
+                    child.SetCurrentValue(Control.PaddingProperty, thickness.Value);
                 }
             }
         }

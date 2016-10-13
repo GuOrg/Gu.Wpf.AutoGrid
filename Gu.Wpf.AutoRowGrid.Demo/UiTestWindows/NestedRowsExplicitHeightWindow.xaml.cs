@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo.UiTestWindows
+﻿namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System.Windows;
 
@@ -6,7 +6,7 @@
     {
         public NestedRowsExplicitHeightWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

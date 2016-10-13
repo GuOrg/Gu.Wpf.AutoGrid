@@ -11,6 +11,7 @@
     <UserControl.DataContext>
         <local:ViewModel />
     </UserControl.DataContext>
+    <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />

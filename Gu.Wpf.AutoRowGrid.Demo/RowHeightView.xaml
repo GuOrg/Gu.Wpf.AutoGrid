@@ -7,6 +7,7 @@
              d:DesignHeight="300"
              d:DesignWidth="150"
              mc:Ignorable="d">
+    <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />

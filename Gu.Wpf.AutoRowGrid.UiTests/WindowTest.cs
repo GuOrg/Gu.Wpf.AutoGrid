@@ -14,9 +14,9 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var processStartInfo = Info.CreateStartInfo(Title);
+            var processStartInfo = Info.CreateStartInfo(this.Title);
             this.application = Application.AttachOrLaunch(processStartInfo);
-            this.Window = this.application.GetWindow(Title);
+            this.Window = this.application.GetWindow(this.Title);
         }
 
         [OneTimeTearDown]

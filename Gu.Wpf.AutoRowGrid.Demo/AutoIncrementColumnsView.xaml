@@ -10,6 +10,7 @@
     <UserControl.DataContext>
         <demo:ViewModel />
     </UserControl.DataContext>
+    <!-- ReSharper disable Xaml.RedundantAttachedProperty -->
     <autoRowGrid:Grid ColumnDefinitions="Auto *">
         <autoRowGrid:Row Name="first row">
             <!--explicit column is ignored here-->

@@ -56,7 +56,7 @@
             {
                 if (this.LastRowFill)
                 {
-                    grid.RowDefinitions[grid.RowDefinitions.Count - 1].Height = new GridLength(1, GridUnitType.Star);
+                    grid.RowDefinitions[grid.RowDefinitions.Count - 1].SetCurrentValue(RowDefinition.HeightProperty, new GridLength(1, GridUnitType.Star));
                 }
                 else
                 {

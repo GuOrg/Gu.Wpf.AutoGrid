@@ -52,7 +52,7 @@
             }
             else
             {
-                textBoxView?.SetValue(FrameworkElement.MarginProperty, margin);
+                textBoxView?.SetCurrentValue(FrameworkElement.MarginProperty, margin.Value);
             }
         }
     }
