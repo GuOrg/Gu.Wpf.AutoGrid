@@ -12,7 +12,7 @@
             "Margin",
             typeof(Thickness?),
             typeof(TextBoxView),
-            new PropertyMetadata(null, OnTextBoxViewMarginChanged));
+            new PropertyMetadata(null, OnMarginChanged));
 
         public static Type Type { get; } = typeof(TextBox).Assembly.GetTypes().Single(x => x.Name == "TextBoxView");
 
@@ -28,19 +28,19 @@
             return (Thickness?)element.GetValue(MarginProperty);
         }
 
-        private static void OnTextBoxViewMarginChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnMarginChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var textBox = (TextBox)d;
-            OnTextBoxViewMarginChanged(textBox, (Thickness?)e.NewValue);
+            OnMarginChanged(textBox, (Thickness?)e.NewValue);
         }
 
-        private static void OnTextBoxViewMarginChanged(TextBox textBox, Thickness? margin)
+        private static void OnMarginChanged(TextBox textBox, Thickness? margin)
         {
             if (!textBox.IsLoaded)
             {
                 textBox.Dispatcher.BeginInvoke(
                     DispatcherPriority.Loaded,
-                    new Action(() => OnTextBoxViewMarginChanged(textBox, margin)));
+                    new Action(() => OnMarginChanged(textBox, margin)));
                 return;
             }
 
