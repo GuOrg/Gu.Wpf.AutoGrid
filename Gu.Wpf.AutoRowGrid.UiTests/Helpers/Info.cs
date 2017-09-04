@@ -1,27 +1,12 @@
 ﻿namespace Gu.Wpf.AutoRowGrid.UiTests
 {
     using System;
-    using System.Diagnostics;
     using System.IO;
     using System.Reflection;
 
     public static class Info
     {
-        public static ProcessStartInfo ProcessStartInfo { get; } = CreateStartInfo(null);
-
-        internal static ProcessStartInfo CreateStartInfo(string args)
-        {
-            var processStartInfo = new ProcessStartInfo
-            {
-                FileName = GetExeFileName(),
-                Arguments = args,
-                UseShellExecute = false,
-                //CreateNoWindow = false,
-                //RedirectStandardOutput = true,
-                //RedirectStandardError = true
-            };
-            return processStartInfo;
-        }
+        public static string ExeFileName { get; } = GetExeFileName();
 
         private static string GetExeFileName()
         {

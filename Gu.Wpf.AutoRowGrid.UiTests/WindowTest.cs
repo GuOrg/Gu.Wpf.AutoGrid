@@ -1,12 +1,12 @@
-using NUnit.Framework;
-using TestStack.White;
-using TestStack.White.UIItems.WindowItems;
-
 namespace Gu.Wpf.AutoRowGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
+    using NUnit.Framework;
+
     public abstract class WindowTest
     {
         private Application application;
+
         protected Window Window { get; private set; }
 
         public abstract string Title { get; }
@@ -14,9 +14,8 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var processStartInfo = Info.CreateStartInfo(this.Title);
-            this.application = Application.AttachOrLaunch(processStartInfo);
-            this.Window = this.application.GetWindow(this.Title);
+            this.application = Application.Launch(Info.ExeFileName, this.Title);
+            this.Window = this.application.MainWindow;
         }
 
         [OneTimeTearDown]
