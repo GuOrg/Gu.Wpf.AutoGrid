@@ -9,8 +9,8 @@
         {
             var groupBox = window.FindGroupBox();
             var item = groupBox.FindFirstDescendant(x => x.ByAutomationId(name));
-            var topLeft = item.BoundingRectangle.TopLeft - groupBox.BoundingRectangle.TopLeft;
-            var bottomRight = item.BoundingRectangle.BottomRight - groupBox.BoundingRectangle.TopLeft;
+            var topLeft = item.Bounds.TopLeft - groupBox.Bounds.TopLeft;
+            var bottomRight = item.Bounds.BottomRight - groupBox.Bounds.TopLeft;
             return $"{topLeft.ToString(CultureInfo.InvariantCulture)} {bottomRight.ToString(CultureInfo.InvariantCulture)}";
         }
     }
