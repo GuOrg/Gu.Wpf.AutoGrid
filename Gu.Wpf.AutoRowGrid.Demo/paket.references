@@ -1,5 +1,6 @@
 group Analyzers
-  JetBrains.Annotations
-  StyleCop.Analyzers
-  WpfAnalyzers
   Gu.Analyzers
+  IDisposableAnalyzers
+  StyleCop.Analyzers
+  PropertyChangedAnalyzers
+  JetBrains.Annotations

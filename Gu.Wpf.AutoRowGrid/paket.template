@@ -3,8 +3,8 @@ tags wpf xaml grid
 projectUrl https://github.com/JohanLarsson/Gu.Wpf.AutoGrid
 licenseUrl http://opensource.org/licenses/MIT
 
-excludeddependencies
-  JetBrains.Annotations
-  StyleCop.Analyzers
-  WpfAnalyzers
-  Gu.Analyzers
+releasenotes
+  BUGFIX: Exclude SourceLink dependency in packages.
+
+excludedgroups
+  Analyzers
