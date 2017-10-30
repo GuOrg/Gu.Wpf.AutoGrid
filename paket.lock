@@ -9,7 +9,7 @@ NUGET
     JetBrains.Annotations (11.1)
     PropertyChangedAnalyzers (2.2.1)
     StyleCop.Analyzers (1.0.2)
-    WpfAnalyzers (0.3)
+    WpfAnalyzers (0.3.1)
 
 GROUP Test
 RESTRICTION: >= net45
