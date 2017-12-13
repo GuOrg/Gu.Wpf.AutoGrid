@@ -10,7 +10,7 @@
         [Test]
         public void Bounds()
         {
-            using (var app = Application.Launch(Info.ExeFileName, WindowName))
+            using (var app = Application.Launch("Gu.Wpf.AutoRowGrid.Demo.exe", WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual("0,0 35,18", window.GetItemPosition("R0C0"));

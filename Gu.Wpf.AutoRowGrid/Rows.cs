@@ -1,4 +1,5 @@
-﻿namespace Gu.Wpf.AutoRowGrid
+﻿#pragma warning disable INPC001 // Implement INotifyPropertyChanged.
+namespace Gu.Wpf.AutoRowGrid
 {
     using System.Collections.ObjectModel;
     using System.Windows;

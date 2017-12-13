@@ -55,7 +55,6 @@
     <Compile Include="AutoRowsLastRowFillTests.cs" />
     <Compile Include="ExplicitRowsAndColumnsLastRowFillTests.cs" />
     <Compile Include="ExplicitRowsAndColumnsTests.cs" />
-    <Compile Include="Helpers\Info.cs" />
     <Compile Include="Helpers\WindowExt.cs" />
     <Compile Include="NestedRowsExplicitHeightTests.cs" />
     <Compile Include="NestedRowsTests.cs" />
