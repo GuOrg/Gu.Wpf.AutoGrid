@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.AutoRowGrid.svg)](https://www.nuget.org/packages/Gu.Wpf.AutoRowGrid/)
 
 
-Small prototype for a less noisy WPF grid.
+Small prototype for a less noisy WPF grid. Perhaps useful when prototyping.
 
 
 # Grid
