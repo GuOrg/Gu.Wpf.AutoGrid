@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
+namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System;
     using System.Linq;
@@ -38,9 +38,9 @@
         {
             if (!textBox.IsLoaded)
             {
-                textBox.Dispatcher.BeginInvoke(
-                    DispatcherPriority.Loaded,
-                    new Action(() => OnTextBoxViewMarginChanged(textBox, thickness)));
+                _ = textBox.Dispatcher.BeginInvoke(
+                     DispatcherPriority.Loaded,
+                     new Action(() => OnTextBoxViewMarginChanged(textBox, thickness)));
                 return;
             }
 

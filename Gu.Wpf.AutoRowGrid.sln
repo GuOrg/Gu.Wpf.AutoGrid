@@ -5,6 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{AF6E6D40-FE2C-4077-A4D8-D22587491C9C}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		paket.dependencies = paket.dependencies
 		paket.lock = paket.lock
 		.paket\Readme.paket.md = .paket\Readme.paket.md
@@ -21,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{68C4DDDA
 		.paket\Readme.paket.md = .paket\Readme.paket.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid.UiTests", "Gu.Wpf.AutoRowGrid.UiTests\Gu.Wpf.AutoRowGrid.UiTests.csproj", "{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.AutoRowGrid.UiTests", "Gu.Wpf.AutoRowGrid.UiTests\Gu.Wpf.AutoRowGrid.UiTests.csproj", "{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
