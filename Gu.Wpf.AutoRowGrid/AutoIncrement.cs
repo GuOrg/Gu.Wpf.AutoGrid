@@ -1,8 +1,8 @@
-﻿namespace Gu.Wpf.AutoRowGrid
+namespace Gu.Wpf.AutoRowGrid
 {
     using System.Windows;
 
-    /// <summary>Provides an attached proerpty fro setting autoincrementation for an <see cref="UIElement"/> </summary>
+    /// <summary>Provides an attached proerpty fro setting autoincrementation for an <see cref="UIElement"/>. </summary>
     public static class AutoIncrement
     {
         /// <summary>An attached property for setting <see cref="AutoIncrementation"/> on a single element.</summary>
@@ -26,7 +26,7 @@
             return (AutoIncrementation)element.GetValue(AutoIncrementationProperty);
         }
 
-        /// <summary>If self is Inherit use <paramref name="parentValue"/></summary>
+        /// <summary>If self is Inherit use <paramref name="parentValue"/>.</summary>
         internal static AutoIncrementation CoerceWith(this AutoIncrementation self, AutoIncrementation parentValue)
         {
             if (self == AutoIncrementation.Inherit)

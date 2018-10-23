@@ -3,7 +3,7 @@
     using System.Windows;
 
     /// <summary>
-    /// Interaction logic for AutoRowsAndColumnsWindow.xaml
+    /// Interaction logic for AutoRowsAndColumnsWindow.xaml.
     /// </summary>
     public partial class AutoRowsAndColumnsWindow : Window
     {

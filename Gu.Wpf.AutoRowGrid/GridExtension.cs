@@ -9,7 +9,7 @@ namespace Gu.Wpf.AutoRowGrid
     using System.Windows.Controls;
     using System.Windows.Markup;
 
-    /// <summary>Helper for creating <see cref="Grid"/></summary>
+    /// <summary>Helper for creating <see cref="Grid"/>.</summary>
     [MarkupExtensionReturnType(typeof(Grid))]
     [ContentProperty("Rows")]
     [DefaultProperty("Rows")]
@@ -22,7 +22,7 @@ namespace Gu.Wpf.AutoRowGrid
         /// </summary>
         public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
 
-        /// <summary> Gets or sets see <see cref="Grid.ColumnDefinitions"/> </summary>
+        /// <summary> Gets or sets see <see cref="Grid.ColumnDefinitions"/>. </summary>
         public ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions();
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Gu.Wpf.AutoRowGrid
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;
 
         /// <summary>
-        /// Gets or sets a value indicating how the last row is handled.
+        /// Gets or sets a value indicating whether gets or sets a value indicating how the last row is handled.
         /// If true tha last row gets Height = "*".
         /// If false an extra row with  Height = "*" is added to fill remaining space.</summary>
         public bool LastRowFill { get; set; } = false;
@@ -79,41 +79,38 @@ namespace Gu.Wpf.AutoRowGrid
         {
             foreach (var item in children)
             {
-                var uiElement = item as UIElement;
-                if (uiElement != null)
+                switch (item)
                 {
-                    grid.Children.Add(uiElement);
-                    var maxRow = Grid.GetRow(uiElement);
-                    while (maxRow > grid.RowDefinitions.Count - 1)
-                    {
-                        grid.RowDefinitions.Add(new RowDefinition { Height = rowHeight });
-                    }
+                    case UIElement uiElement:
+                        grid.Children.Add(uiElement);
+                        var maxRow = Grid.GetRow(uiElement);
+                        while (maxRow > grid.RowDefinitions.Count - 1)
+                        {
+                            grid.RowDefinitions.Add(new RowDefinition { Height = rowHeight });
+                        }
 
-                    continue;
+                        break;
+                    case Row rowItem:
+                        grid.RowDefinitions.Add(new RowDefinition { Height = rowItem.Height ?? rowHeight });
+                        var rowIndex = grid.RowDefinitions.Count - 1;
+                        foreach (var child in rowItem)
+                        {
+                            grid.Children.Add(child);
+                            Grid.SetRow(child, rowIndex);
+                        }
+
+                        break;
+                    default:
+                        // this can't SO since WPF already checks that an element can only have one parent.
+                        // letting it fail with the framework exception.
+                        var rows = (Rows)item;
+                        AddRowsRecursive(grid, rows, rows.Height ?? GridLength.Auto);
+                        break;
                 }
-
-                var rowItem = item as Row;
-                if (rowItem != null)
-                {
-                    grid.RowDefinitions.Add(new RowDefinition { Height = rowItem.Height ?? rowHeight });
-                    var rowIndex = grid.RowDefinitions.Count - 1;
-                    foreach (var child in rowItem)
-                    {
-                        grid.Children.Add(child);
-                        Grid.SetRow(child, rowIndex);
-                    }
-
-                    continue;
-                }
-
-                // this can't SO since WPF already checks that an element can only have one parent.
-                // letting it fail with the framework exception.
-                var rows = (Rows)item;
-                AddRowsRecursive(grid, rows, rows.Height ?? GridLength.Auto);
             }
         }
 
-        /// <summary>A collection of children for <see cref="GridExtension"/> </summary>
+        /// <summary>A collection of children for <see cref="GridExtension"/>. </summary>
         public class ChildCollection : Collection<object>
         {
             /// <summary>Update all nested children recursively with the settings from parent.</summary>

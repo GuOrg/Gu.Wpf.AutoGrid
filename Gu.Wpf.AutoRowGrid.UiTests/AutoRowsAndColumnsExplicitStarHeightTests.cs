@@ -5,7 +5,7 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
 
     public class AutoRowsAndColumnsExplicitStarHeightTests
     {
-        private static readonly string WindowName = "AutoRowsAndColumnsExplicitStarHeightWindow";
+        private const string WindowName = "AutoRowsAndColumnsExplicitStarHeightWindow";
 
         [Test]
         public void Bounds()

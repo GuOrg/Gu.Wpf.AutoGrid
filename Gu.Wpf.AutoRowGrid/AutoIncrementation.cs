@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid
+namespace Gu.Wpf.AutoRowGrid
 {
     /// <summary>What auto incrementation strategy to use.</summary>
     public enum AutoIncrementation
@@ -10,6 +10,6 @@
         AutoIncrement,
 
         /// <summary>Grid.Column="n" is specified manually in XAML.</summary>
-        UseExplicitColumns
+        UseExplicitColumns,
     }
 }

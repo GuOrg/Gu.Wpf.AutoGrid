@@ -6,7 +6,7 @@ namespace Gu.Wpf.AutoRowGrid
 
     /// <summary>
     /// <see cref="System.Windows.Controls.ColumnDefinitionCollection"/> is sealed with internal ctor. Hence this class.
-    /// Only used as a returnvalue from <see cref="ColumnDefinitionsConverter"/>
+    /// Only used as a returnvalue from <see cref="ColumnDefinitionsConverter"/>.
     /// </summary>
     [TypeConverter(typeof(ColumnDefinitionsConverter))]
     public class ColumnDefinitions : Collection<System.Windows.Controls.ColumnDefinition>

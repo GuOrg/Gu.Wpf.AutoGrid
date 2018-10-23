@@ -2,7 +2,7 @@
 {
     using System.Windows;
 
-    /// <summary>Used only for constraining <see cref="Rows"/></summary>
+    /// <summary>Used only for constraining <see cref="Rows"/>.</summary>
     public interface IRow
     {
         /// <summary>
