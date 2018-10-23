@@ -81,4 +81,7 @@
     <Rule Id="WA1202" Action="Error" />
     <Rule Id="WA1210" Action="Error" />
   </Rules>
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <Rule Id="CA1710" Action="None" />
+  </Rules>
 </RuleSet>

@@ -22,8 +22,10 @@ namespace Gu.Wpf.AutoRowGrid
         /// </summary>
         public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
 
+#pragma warning disable CA2227 // Collection properties should be read only
         /// <summary> Gets or sets see <see cref="Grid.ColumnDefinitions"/>. </summary>
         public ColumnDefinitions ColumnDefinitions { get; set; } = new ColumnDefinitions();
+#pragma warning restore CA2227 // Collection properties should be read only
 
         /// <summary>
         /// Gets or sets a value for what height should be used when generating rows for the grid.
@@ -43,8 +45,10 @@ namespace Gu.Wpf.AutoRowGrid
         /// If false an extra row with  Height = "*" is added to fill remaining space.</summary>
         public bool LastRowFill { get; set; } = false;
 
+#pragma warning disable CA2227 // Collection properties should be read only
         /// <summary> Gets or sets the children that are used when creating the grid.</summary>
         public ChildCollection Rows { get; set; } = new ChildCollection();
+#pragma warning restore CA2227 // Collection properties should be read only
 
         /// <inheritdoc/>
         public override object ProvideValue(IServiceProvider serviceProvider)
@@ -110,8 +114,10 @@ namespace Gu.Wpf.AutoRowGrid
             }
         }
 
+#pragma warning disable CA1034 // Nested types should not be visible
         /// <summary>A collection of children for <see cref="GridExtension"/>. </summary>
         public class ChildCollection : Collection<object>
+#pragma warning restore CA1034 // Nested types should not be visible
         {
             /// <summary>Update all nested children recursively with the settings from parent.</summary>
             internal void Inherit(AutoIncrementation autoIncrementation, GridLength parentRowHeight)
