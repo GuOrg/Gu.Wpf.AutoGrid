@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid
+namespace Gu.Wpf.AutoRowGrid
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,7 @@
         /// <summary>
         /// Gets or sets a value that specifies if content of rows will get column index from index.
         /// Default is Increment.
-        /// This will be used for all subnodes that have Inherit.
+        /// This will be used for all sub-nodes that have Inherit.
         /// </summary>
         public static AutoIncrementation GlobalAutoIncrementation { get; set; } = AutoIncrementation.AutoIncrement;
 
@@ -32,7 +32,7 @@
         public GridLength RowHeight { get; set; } = GridLength.Auto;
 
         /// <summary>
-        /// Gets or sets a value thatspecifies if content of rows will get column index from index.
+        /// Gets or sets a value that specifies if content of rows will get column index from index.
         /// Default is Increment.
         /// </summary>
         public AutoIncrementation AutoIncrementation { get; set; } = GlobalAutoIncrementation;

@@ -5,7 +5,7 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
 
     public class AutoRowsAndColumnsTests
     {
-        private static readonly string WindowName = "AutoRowsAndColumnsWindow";
+        private const string WindowName = "AutoRowsAndColumnsWindow";
 
         [Test]
         public void Bounds()

@@ -1,7 +1,11 @@
 group Analyzers
+  AsyncUsageAnalyzers
   Gu.Analyzers
   IDisposableAnalyzers
-  StyleCop.Analyzers
+  Microsoft.CodeAnalysis.FxCopAnalyzers
   PropertyChangedAnalyzers
+  PublicApiAnalyzer
+  ReflectionAnalyzers
+  StyleCop.Analyzers
   WpfAnalyzers
   JetBrains.Annotations

@@ -1,11 +1,11 @@
-﻿namespace Gu.Wpf.AutoRowGrid.UiTests
+namespace Gu.Wpf.AutoRowGrid.UiTests
 {
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
     public class ExplicitRowsAndColumnsTests
     {
-        private static readonly string WindowName = "ExplicitRowsAndColumnsWindow";
+        private const string WindowName = "ExplicitRowsAndColumnsWindow";
 
         [Test]
         public void Bounds()

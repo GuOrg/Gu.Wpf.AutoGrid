@@ -5,7 +5,7 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
 
     public class NestedRowsTests
     {
-        private static readonly string WindowName = "NestedRowsWindow";
+        private const string WindowName = "NestedRowsWindow";
 
         [Test]
         public void Bounds()

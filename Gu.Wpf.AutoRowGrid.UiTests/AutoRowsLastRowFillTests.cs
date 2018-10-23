@@ -5,7 +5,7 @@ namespace Gu.Wpf.AutoRowGrid.UiTests
 
     public class AutoRowsLastRowFillTests
     {
-        private static readonly string WindowName = "AutoRowsLastRowFillWindow";
+        private const string WindowName = "AutoRowsLastRowFillWindow";
 
         [Test]
         public void Bounds()
