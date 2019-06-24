@@ -6,8 +6,8 @@ group Analyzers
   nuget Gu.Analyzers
   nuget IDisposableAnalyzers
   nuget Microsoft.CodeAnalysis.FxCopAnalyzers
+  nuget Microsoft.CodeAnalysis.PublicApiAnalyzers
   nuget PropertyChangedAnalyzers
-  nuget PublicApiAnalyzer prerelease
   nuget ReflectionAnalyzers prerelease
   nuget StyleCop.Analyzers prerelease
   nuget WpfAnalyzers
@@ -16,5 +16,7 @@ group Analyzers
 group Test
   source http://www.nuget.org/api/v2/
   storage: none
+  nuget Microsoft.NET.Test.Sdk
   nuget NUnit
+  nuget NUnit3TestAdapter
   nuget Gu.Wpf.UiAutomation
