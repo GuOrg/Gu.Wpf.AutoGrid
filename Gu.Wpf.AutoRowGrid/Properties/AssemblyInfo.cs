@@ -1,7 +1,8 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Markup;
+
 [assembly: AssemblyTitle("Gu.Wpf.AutoRowGrid")]
 [assembly: AssemblyDescription("Small lib for making use of WPF's grid less painful.")]
 [assembly: AssemblyConfiguration("")]
