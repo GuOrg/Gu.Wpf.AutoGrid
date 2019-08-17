@@ -16,11 +16,17 @@ namespace Gu.Wpf.AutoRowGrid.Demo
 
         public static Type Type { get; } = typeof(TextBox).Assembly.GetTypes().Single(x => x.Name == "TextBoxView");
 
+        /// <summary>Helper for setting <see cref="MarginProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="TextBox"/> to set <see cref="MarginProperty"/> on.</param>
+        /// <param name="value">Margin property value.</param>
         public static void SetMargin(TextBox element, Thickness? value)
         {
             element.SetValue(MarginProperty, value);
         }
 
+        /// <summary>Helper for getting <see cref="MarginProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="TextBox"/> to read <see cref="MarginProperty"/> from.</param>
+        /// <returns>Margin property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBox))]
         public static Thickness? GetMargin(TextBox element)

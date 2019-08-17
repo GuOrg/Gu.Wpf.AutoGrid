@@ -11,8 +11,8 @@ namespace Gu.Wpf.AutoRowGrid
 
     /// <summary>Helper for creating <see cref="Grid"/>.</summary>
     [MarkupExtensionReturnType(typeof(Grid))]
-    [ContentProperty("Rows")]
-    [DefaultProperty("Rows")]
+    [ContentProperty(nameof(Rows))]
+    [DefaultProperty(nameof(Rows))]
     public class GridExtension : MarkupExtension
     {
         /// <summary>

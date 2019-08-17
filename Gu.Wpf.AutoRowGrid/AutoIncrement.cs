@@ -12,13 +12,17 @@ namespace Gu.Wpf.AutoRowGrid
             typeof(AutoIncrement),
             new FrameworkPropertyMetadata(AutoIncrementation.Inherit, FrameworkPropertyMetadataOptions.NotDataBindable));
 
-        /// <summary>An attached property for setting <see cref="AutoIncrementation"/> on a single element.</summary>
+        /// <summary>Helper for setting <see cref="AutoIncrementationProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to set <see cref="AutoIncrementationProperty"/> on.</param>
+        /// <param name="value">AutoIncrementation property value.</param>
         public static void SetAutoIncrementation(this UIElement element, AutoIncrementation value)
         {
             element.SetValue(AutoIncrementationProperty, value);
         }
 
-        /// <summary>An attached property for setting <see cref="AutoIncrementation"/> on a single element.</summary>
+        /// <summary>Helper for getting <see cref="AutoIncrementationProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to read <see cref="AutoIncrementationProperty"/> from.</param>
+        /// <returns>AutoIncrementation property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static AutoIncrementation GetAutoIncrementation(this UIElement element)

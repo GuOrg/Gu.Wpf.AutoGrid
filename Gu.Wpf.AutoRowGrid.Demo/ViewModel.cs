@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
+namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
@@ -19,10 +19,7 @@
 
         public string Value1
         {
-            get
-            {
-                return this.value1;
-            }
+            get => this.value1;
 
             set
             {
@@ -38,10 +35,7 @@
 
         public string Value2
         {
-            get
-            {
-                return this.value2;
-            }
+            get => this.value2;
 
             set
             {
@@ -57,10 +51,7 @@
 
         public string Value3
         {
-            get
-            {
-                return this.value3;
-            }
+            get => this.value3;
 
             set
             {
@@ -76,10 +67,7 @@
 
         public string Value4
         {
-            get
-            {
-                return this.value4;
-            }
+            get => this.value4;
 
             set
             {
@@ -95,10 +83,7 @@
 
         public string Value5
         {
-            get
-            {
-                return this.value5;
-            }
+            get => this.value5;
 
             set
             {
@@ -114,10 +99,7 @@
 
         public string Value6
         {
-            get
-            {
-                return this.value6;
-            }
+            get => this.value6;
 
             set
             {
@@ -133,10 +115,7 @@
 
         public string Value7
         {
-            get
-            {
-                return this.value7;
-            }
+            get => this.value7;
 
             set
             {
