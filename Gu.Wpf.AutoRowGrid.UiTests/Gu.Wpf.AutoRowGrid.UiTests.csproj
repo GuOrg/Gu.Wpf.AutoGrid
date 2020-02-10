@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net451</TargetFramework>
     <CodeAnalysisRuleSet>Gu.Wpf.AutoRowGrid.UiTests.ruleset</CodeAnalysisRuleSet>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
 
   <ItemGroup>
