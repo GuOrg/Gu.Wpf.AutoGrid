@@ -3,8 +3,6 @@ namespace Gu.Wpf.AutoRowGrid.Demo
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    using JetBrains.Annotations;
-
     public class ViewModel : INotifyPropertyChanged
     {
         private string value1 = "value 1";
@@ -129,7 +127,6 @@ namespace Gu.Wpf.AutoRowGrid.Demo
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
