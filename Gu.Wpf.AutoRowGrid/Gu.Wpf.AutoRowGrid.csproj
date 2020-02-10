@@ -1,11 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>library</OutputType>
     <TargetFramework>net40</TargetFramework>
     <UseWpf>true</UseWpf>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>Gu.Wpf.AutoRowGrid.ruleset</CodeAnalysisRuleSet>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.6.0.1</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Authors>Johan Larsson</Authors>
+    <Description>Small lib for making use of WPF's grid less painful.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/GuOrg/Gu.Wpf.AutoGrid</PackageProjectUrl>
+    <PackageReleaseNotes>BUGFIX: Exclude SourceLink dependency in packages.</PackageReleaseNotes>
+    <PackageTags>wpf xaml grid</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +26,10 @@
   <ItemGroup>
     <AdditionalFiles Include="PublicAPI.Shipped.txt" />
     <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <Import Project="..\.paket\paket.targets" />
