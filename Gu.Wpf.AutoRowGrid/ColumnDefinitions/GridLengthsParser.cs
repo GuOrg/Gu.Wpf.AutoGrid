@@ -33,23 +33,20 @@ namespace Gu.Wpf.AutoRowGrid
         // http://referencesource.microsoft.com/#PresentationFramework/src/Framework/System/Windows/GridLengthConverter.cs,218
         internal static string ToString(GridLength gl, CultureInfo cultureInfo)
         {
-            switch (gl.GridUnitType)
+            return gl.GridUnitType switch
             {
                 // for Auto print out "Auto". value is always "1.0"
-                case GridUnitType.Auto:
-                    return "Auto";
+                GridUnitType.Auto => "Auto",
 
                 // Star has one special case when value is "1.0".
                 // in this case drop value part and print only "Star"
-                case GridUnitType.Star:
-                    return IsOne(gl.Value)
-                               ? "*"
-                               : Convert.ToString(gl.Value, cultureInfo) + "*";
+                GridUnitType.Star => IsOne(gl.Value)
+                                               ? "*"
+                                               : Convert.ToString(gl.Value, cultureInfo) + "*",
 
                 // for Pixel print out the numeric value. "px" can be omitted.
-                default:
-                    return Convert.ToString(gl.Value, cultureInfo);
-            }
+                _ => Convert.ToString(gl.Value, cultureInfo),
+            };
         }
 
         // http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs,8e95e6558bdb123d
