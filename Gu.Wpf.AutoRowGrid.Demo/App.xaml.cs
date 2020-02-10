@@ -10,7 +10,7 @@ namespace Gu.Wpf.AutoRowGrid.Demo
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            if (e is {Args:{Length:1} args})
+            if (e is { Args: { Length: 1 } args })
             {
                 var window = args[0];
                 this.StartupUri = new Uri($"UiTestWindows/{window}.xaml", UriKind.Relative);

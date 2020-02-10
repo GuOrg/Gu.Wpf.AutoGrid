@@ -21,6 +21,11 @@ namespace Gu.Wpf.AutoRowGrid.Demo
         /// <param name="value">Margin property value.</param>
         public static void SetMargin(TextBox element, Thickness? value)
         {
+            if (element is null)
+            {
+                throw new ArgumentNullException(nameof(element));
+            }
+
             element.SetValue(MarginProperty, value);
         }
 
@@ -31,6 +36,11 @@ namespace Gu.Wpf.AutoRowGrid.Demo
         [AttachedPropertyBrowsableForType(typeof(TextBox))]
         public static Thickness? GetMargin(TextBox element)
         {
+            if (element is null)
+            {
+                throw new ArgumentNullException(nameof(element));
+            }
+
             return (Thickness?)element.GetValue(MarginProperty);
         }
 
@@ -52,7 +62,7 @@ namespace Gu.Wpf.AutoRowGrid.Demo
 
             var textBoxView = textBox.NestedChildren()
                                      .SingleOrDefault(x => x.GetType().Name == "TextBoxView");
-            if (margin == null)
+            if (margin is null)
             {
                 textBoxView?.ClearValue(FrameworkElement.MarginProperty);
             }

@@ -1,4 +1,4 @@
-﻿#pragma warning disable INPC001 // Implement INotifyPropertyChanged.
+#pragma warning disable INPC001 // Implement INotifyPropertyChanged.
 namespace Gu.Wpf.AutoRowGrid
 {
     using System.Collections.ObjectModel;
@@ -23,7 +23,7 @@ namespace Gu.Wpf.AutoRowGrid
         /// <inheritdoc/>
         public void Inherit(AutoIncrementation parentAutoIncrementation, GridLength parentRowHeight)
         {
-            this.Height = this.Height ?? parentRowHeight;
+            this.Height ??= parentRowHeight;
             var autoIncrementation = this.AutoIncrementation.CoerceWith(parentAutoIncrementation);
             var columnIndex = 0;
             for (var i = 0; i < this.Items.Count; i++)

@@ -21,6 +21,11 @@ namespace Gu.Wpf.AutoRowGrid.Demo
         /// <param name="value">AllNestedMarginsAndPaddings property value.</param>
         public static void SetAllNestedMarginsAndPaddings(this FrameworkElement element, Thickness? value)
         {
+            if (element is null)
+            {
+                throw new ArgumentNullException(nameof(element));
+            }
+
             element.SetValue(AllNestedMarginsAndPaddingsProperty, value);
         }
 
@@ -31,6 +36,11 @@ namespace Gu.Wpf.AutoRowGrid.Demo
         [AttachedPropertyBrowsableForType(typeof(FrameworkElement))]
         public static Thickness? GetAllNestedMarginsAndPaddings(this FrameworkElement element)
         {
+            if (element is null)
+            {
+                throw new ArgumentNullException(nameof(element));
+            }
+
             return (Thickness?)element.GetValue(AllNestedMarginsAndPaddingsProperty);
         }
 
@@ -52,7 +62,7 @@ namespace Gu.Wpf.AutoRowGrid.Demo
 
             foreach (var child in textBox.NestedChildren().OfType<FrameworkElement>())
             {
-                if (thickness == null)
+                if (thickness is null)
                 {
                     child.ClearValue(FrameworkElement.MarginProperty);
                 }
@@ -64,7 +74,7 @@ namespace Gu.Wpf.AutoRowGrid.Demo
 
             foreach (var child in textBox.NestedChildren().OfType<Control>())
             {
-                if (thickness == null)
+                if (thickness is null)
                 {
                     child.ClearValue(Control.PaddingProperty);
                 }
