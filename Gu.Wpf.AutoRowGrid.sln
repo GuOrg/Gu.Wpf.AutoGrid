@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{AF6E6D40-F
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
+		azure-pipelines.yml = azure-pipelines.yml
 		Gu.Wpf.AutoRowGrid.sln.DotSettings = Gu.Wpf.AutoRowGrid.sln.DotSettings
 	EndProjectSection
 EndProject

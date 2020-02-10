@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
+namespace Gu.Wpf.AutoRowGrid.Demo
 {
     using System;
     using System.Windows;
@@ -10,9 +10,9 @@
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            if (e.Args.Length == 1)
+            if (e is {Args:{Length:1} args})
             {
-                var window = e.Args[0];
+                var window = args[0];
                 this.StartupUri = new Uri($"UiTestWindows/{window}.xaml", UriKind.Relative);
             }
 

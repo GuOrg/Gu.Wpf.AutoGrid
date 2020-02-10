@@ -17,6 +17,11 @@ namespace Gu.Wpf.AutoRowGrid
         /// <param name="value">AutoIncrementation property value.</param>
         public static void SetAutoIncrementation(this UIElement element, AutoIncrementation value)
         {
+            if (element is null)
+            {
+                throw new System.ArgumentNullException(nameof(element));
+            }
+
             element.SetValue(AutoIncrementationProperty, value);
         }
 
@@ -27,6 +32,11 @@ namespace Gu.Wpf.AutoRowGrid
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static AutoIncrementation GetAutoIncrementation(this UIElement element)
         {
+            if (element is null)
+            {
+                throw new System.ArgumentNullException(nameof(element));
+            }
+
             return (AutoIncrementation)element.GetValue(AutoIncrementationProperty);
         }
 
