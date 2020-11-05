@@ -17,6 +17,7 @@ namespace Gu.Wpf.AutoRowGrid
         }
 
         /// <summary>Initializes a new instance of the <see cref="ColumnDefinitions"/> class.</summary>
+        /// <param name="collection">The <see cref="IList{ColumnDefinition}"/>.</param>
         public ColumnDefinitions(IList<System.Windows.Controls.ColumnDefinition> collection)
             : base(collection)
         {

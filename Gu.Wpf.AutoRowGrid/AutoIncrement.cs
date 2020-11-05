@@ -40,7 +40,7 @@ namespace Gu.Wpf.AutoRowGrid
             return (AutoIncrementation)element.GetValue(AutoIncrementationProperty);
         }
 
-        /// <summary>If self is Inherit use <paramref name="parentValue"/>.</summary>
+        // If self is Inherit use <paramref name="parentValue"/>
         internal static AutoIncrementation CoerceWith(this AutoIncrementation self, AutoIncrementation parentValue)
         {
             if (self == AutoIncrementation.Inherit)
