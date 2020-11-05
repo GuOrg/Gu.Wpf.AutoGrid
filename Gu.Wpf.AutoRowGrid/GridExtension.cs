@@ -43,7 +43,7 @@ namespace Gu.Wpf.AutoRowGrid
         /// Gets or sets a value indicating whether gets or sets a value indicating how the last row is handled.
         /// If true tha last row gets Height = "*".
         /// If false an extra row with  Height = "*" is added to fill remaining space.</summary>
-        public bool LastRowFill { get; set; } = false;
+        public bool LastRowFill { get; set; }
 
 #pragma warning disable CA2227 // Collection properties should be read only
         /// <summary> Gets or sets the children that are used when creating the grid.</summary>
@@ -120,6 +120,8 @@ namespace Gu.Wpf.AutoRowGrid
 #pragma warning restore CA1034 // Nested types should not be visible
         {
             /// <summary>Update all nested children recursively with the settings from parent.</summary>
+            /// <param name="autoIncrementation">The <see cref="AutoIncrementation"/>.</param>
+            /// <param name="parentRowHeight">The <see cref="GridLength"/>.</param>
             internal void Inherit(AutoIncrementation autoIncrementation, GridLength parentRowHeight)
             {
                 foreach (var row in this.Items.OfType<IRow>())
