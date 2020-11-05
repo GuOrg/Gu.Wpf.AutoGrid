@@ -1,11 +1,12 @@
-﻿Gu.Wpf.AutoRowGrid.AutoIncrement
+﻿#nullable enable
+Gu.Wpf.AutoRowGrid.AutoIncrement
 Gu.Wpf.AutoRowGrid.AutoIncrementation
 Gu.Wpf.AutoRowGrid.AutoIncrementation.AutoIncrement = 1 -> Gu.Wpf.AutoRowGrid.AutoIncrementation
 Gu.Wpf.AutoRowGrid.AutoIncrementation.Inherit = 0 -> Gu.Wpf.AutoRowGrid.AutoIncrementation
 Gu.Wpf.AutoRowGrid.AutoIncrementation.UseExplicitColumns = 2 -> Gu.Wpf.AutoRowGrid.AutoIncrementation
 Gu.Wpf.AutoRowGrid.ColumnDefinitions
 Gu.Wpf.AutoRowGrid.ColumnDefinitions.ColumnDefinitions() -> void
-Gu.Wpf.AutoRowGrid.ColumnDefinitions.ColumnDefinitions(System.Collections.Generic.IList<System.Windows.Controls.ColumnDefinition> collection) -> void
+Gu.Wpf.AutoRowGrid.ColumnDefinitions.ColumnDefinitions(System.Collections.Generic.IList<System.Windows.Controls.ColumnDefinition!>! collection) -> void
 Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter
 Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ColumnDefinitionsConverter() -> void
 Gu.Wpf.AutoRowGrid.GridExtension
@@ -13,14 +14,14 @@ Gu.Wpf.AutoRowGrid.GridExtension.AutoIncrementation.get -> Gu.Wpf.AutoRowGrid.Au
 Gu.Wpf.AutoRowGrid.GridExtension.AutoIncrementation.set -> void
 Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection
 Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.ChildCollection() -> void
-Gu.Wpf.AutoRowGrid.GridExtension.ColumnDefinitions.get -> Gu.Wpf.AutoRowGrid.ColumnDefinitions
+Gu.Wpf.AutoRowGrid.GridExtension.ColumnDefinitions.get -> Gu.Wpf.AutoRowGrid.ColumnDefinitions!
 Gu.Wpf.AutoRowGrid.GridExtension.ColumnDefinitions.set -> void
 Gu.Wpf.AutoRowGrid.GridExtension.GridExtension() -> void
 Gu.Wpf.AutoRowGrid.GridExtension.LastRowFill.get -> bool
 Gu.Wpf.AutoRowGrid.GridExtension.LastRowFill.set -> void
 Gu.Wpf.AutoRowGrid.GridExtension.RowHeight.get -> System.Windows.GridLength
 Gu.Wpf.AutoRowGrid.GridExtension.RowHeight.set -> void
-Gu.Wpf.AutoRowGrid.GridExtension.Rows.get -> Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection
+Gu.Wpf.AutoRowGrid.GridExtension.Rows.get -> Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection!
 Gu.Wpf.AutoRowGrid.GridExtension.Rows.set -> void
 Gu.Wpf.AutoRowGrid.IRow
 Gu.Wpf.AutoRowGrid.IRow.AutoIncrementation.get -> Gu.Wpf.AutoRowGrid.AutoIncrementation
@@ -28,7 +29,7 @@ Gu.Wpf.AutoRowGrid.IRow.AutoIncrementation.set -> void
 Gu.Wpf.AutoRowGrid.IRow.Height.get -> System.Windows.GridLength?
 Gu.Wpf.AutoRowGrid.IRow.Height.set -> void
 Gu.Wpf.AutoRowGrid.IRow.Inherit(Gu.Wpf.AutoRowGrid.AutoIncrementation parentAutoIncrementation, System.Windows.GridLength parentRowHeight) -> void
-Gu.Wpf.AutoRowGrid.IRow.Name.get -> string
+Gu.Wpf.AutoRowGrid.IRow.Name.get -> string?
 Gu.Wpf.AutoRowGrid.IRow.Name.set -> void
 Gu.Wpf.AutoRowGrid.Row
 Gu.Wpf.AutoRowGrid.Row.AutoIncrementation.get -> Gu.Wpf.AutoRowGrid.AutoIncrementation
@@ -36,7 +37,7 @@ Gu.Wpf.AutoRowGrid.Row.AutoIncrementation.set -> void
 Gu.Wpf.AutoRowGrid.Row.Height.get -> System.Windows.GridLength?
 Gu.Wpf.AutoRowGrid.Row.Height.set -> void
 Gu.Wpf.AutoRowGrid.Row.Inherit(Gu.Wpf.AutoRowGrid.AutoIncrementation parentAutoIncrementation, System.Windows.GridLength parentRowHeight) -> void
-Gu.Wpf.AutoRowGrid.Row.Name.get -> string
+Gu.Wpf.AutoRowGrid.Row.Name.get -> string?
 Gu.Wpf.AutoRowGrid.Row.Name.set -> void
 Gu.Wpf.AutoRowGrid.Row.Row() -> void
 Gu.Wpf.AutoRowGrid.Rows
@@ -45,18 +46,18 @@ Gu.Wpf.AutoRowGrid.Rows.AutoIncrementation.set -> void
 Gu.Wpf.AutoRowGrid.Rows.Height.get -> System.Windows.GridLength?
 Gu.Wpf.AutoRowGrid.Rows.Height.set -> void
 Gu.Wpf.AutoRowGrid.Rows.Inherit(Gu.Wpf.AutoRowGrid.AutoIncrementation parentAutoIncrementation, System.Windows.GridLength parentRowHeight) -> void
-Gu.Wpf.AutoRowGrid.Rows.Name.get -> string
+Gu.Wpf.AutoRowGrid.Rows.Name.get -> string?
 Gu.Wpf.AutoRowGrid.Rows.Name.set -> void
 Gu.Wpf.AutoRowGrid.Rows.Rows() -> void
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Type sourceType) -> bool
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Type destinationType) -> bool
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object source) -> object
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object value, System.Type destinationType) -> object
-override Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.InsertItem(int index, object item) -> void
-override Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.SetItem(int index, object item) -> void
-override Gu.Wpf.AutoRowGrid.GridExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-static Gu.Wpf.AutoRowGrid.AutoIncrement.GetAutoIncrementation(this System.Windows.UIElement element) -> Gu.Wpf.AutoRowGrid.AutoIncrementation
-static Gu.Wpf.AutoRowGrid.AutoIncrement.SetAutoIncrementation(this System.Windows.UIElement element, Gu.Wpf.AutoRowGrid.AutoIncrementation value) -> void
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Type! sourceType) -> bool
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Type! destinationType) -> bool
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Globalization.CultureInfo! cultureInfo, object! source) -> object!
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Globalization.CultureInfo! cultureInfo, object! value, System.Type! destinationType) -> object!
+override Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.InsertItem(int index, object! item) -> void
+override Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.SetItem(int index, object! item) -> void
+override Gu.Wpf.AutoRowGrid.GridExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+static Gu.Wpf.AutoRowGrid.AutoIncrement.GetAutoIncrementation(this System.Windows.UIElement! element) -> Gu.Wpf.AutoRowGrid.AutoIncrementation
+static Gu.Wpf.AutoRowGrid.AutoIncrement.SetAutoIncrementation(this System.Windows.UIElement! element, Gu.Wpf.AutoRowGrid.AutoIncrementation value) -> void
 static Gu.Wpf.AutoRowGrid.GridExtension.GlobalAutoIncrementation.get -> Gu.Wpf.AutoRowGrid.AutoIncrementation
 static Gu.Wpf.AutoRowGrid.GridExtension.GlobalAutoIncrementation.set -> void
-static readonly Gu.Wpf.AutoRowGrid.AutoIncrement.AutoIncrementationProperty -> System.Windows.DependencyProperty
+static readonly Gu.Wpf.AutoRowGrid.AutoIncrement.AutoIncrementationProperty -> System.Windows.DependencyProperty!

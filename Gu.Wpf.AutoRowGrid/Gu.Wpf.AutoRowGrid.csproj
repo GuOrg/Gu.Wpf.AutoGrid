@@ -4,6 +4,7 @@
 		<TargetFrameworks>net40;netcoreapp3.1</TargetFrameworks>
 		<UseWpf>true</UseWpf>
 		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -17,13 +18,13 @@
 	</PropertyGroup>
 	
 	<PropertyGroup>
-		<Version>0.6.0.1</Version>
+		<Version>0.6.1</Version>
 		<NeutralLanguage>en</NeutralLanguage>
 		<Authors>Johan Larsson</Authors>
 		<Description>Small lib for making use of WPF's grid less painful.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/GuOrg/Gu.Wpf.AutoGrid</PackageProjectUrl>
-		<PackageReleaseNotes>BUGFIX: Exclude SourceLink dependency in packages.</PackageReleaseNotes>
+		<PackageReleaseNotes>FEATURE: netcoreapp3.1 and nullable: enable</PackageReleaseNotes>
 		<PackageTags>wpf xaml grid</PackageTags>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

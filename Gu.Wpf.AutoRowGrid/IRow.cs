@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.AutoRowGrid
+namespace Gu.Wpf.AutoRowGrid
 {
     using System.Windows;
 
@@ -9,7 +9,7 @@
         /// Gets or sets the name.
         /// The Name is not used for anything but can perhaps be good for documenting the xaml.
         /// </summary>
-        string Name { get; set; }
+        string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating if children of this row should get column index from their position in the row.

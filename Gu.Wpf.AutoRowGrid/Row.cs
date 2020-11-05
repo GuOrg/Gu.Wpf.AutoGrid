@@ -12,7 +12,7 @@ namespace Gu.Wpf.AutoRowGrid
     public class Row : Collection<UIElement>, IRow
     {
         /// <inheritdoc/>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <inheritdoc/>
         public AutoIncrementation AutoIncrementation { get; set; } = AutoIncrementation.Inherit;

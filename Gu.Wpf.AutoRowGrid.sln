@@ -12,15 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{AF6E6D40-F
 		Gu.Wpf.AutoRowGrid.sln.DotSettings = Gu.Wpf.AutoRowGrid.sln.DotSettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid", "Gu.Wpf.AutoRowGrid\Gu.Wpf.AutoRowGrid.csproj", "{AF8CBE62-B44A-4E61-90F6-5453651C16A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.AutoRowGrid", "Gu.Wpf.AutoRowGrid\Gu.Wpf.AutoRowGrid.csproj", "{AF8CBE62-B44A-4E61-90F6-5453651C16A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.AutoRowGrid.Demo", "Gu.Wpf.AutoRowGrid.Demo\Gu.Wpf.AutoRowGrid.Demo.csproj", "{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.AutoRowGrid.Demo", "Gu.Wpf.AutoRowGrid.Demo\Gu.Wpf.AutoRowGrid.Demo.csproj", "{F6E3564A-31A6-4958-AB8F-939AFDF78E6A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{68C4DDDA-EAF5-49D1-941A-1245571C827D}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
-		.paket\Readme.paket.md = .paket\Readme.paket.md
+		RELEASE_NOTES.md = RELEASE_NOTES.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.AutoRowGrid.UiTests", "Gu.Wpf.AutoRowGrid.UiTests\Gu.Wpf.AutoRowGrid.UiTests.csproj", "{3641AF56-78F7-409A-9A4D-7E8AB5D9509D}"
