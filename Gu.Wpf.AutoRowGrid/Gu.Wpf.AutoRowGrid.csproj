@@ -12,6 +12,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>Gu.Wpf.AutoRowGrid.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+	
+	<PropertyGroup>
 		<Version>0.6.0.1</Version>
 		<NeutralLanguage>en</NeutralLanguage>
 		<Authors>Johan Larsson</Authors>
