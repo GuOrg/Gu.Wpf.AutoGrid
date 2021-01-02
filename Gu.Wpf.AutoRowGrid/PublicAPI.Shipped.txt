@@ -49,10 +49,10 @@ Gu.Wpf.AutoRowGrid.Rows.Inherit(Gu.Wpf.AutoRowGrid.AutoIncrementation parentAuto
 Gu.Wpf.AutoRowGrid.Rows.Name.get -> string?
 Gu.Wpf.AutoRowGrid.Rows.Name.set -> void
 Gu.Wpf.AutoRowGrid.Rows.Rows() -> void
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Type! sourceType) -> bool
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Type! destinationType) -> bool
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Globalization.CultureInfo! cultureInfo, object! source) -> object!
-override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! typeDescriptorContext, System.Globalization.CultureInfo! cultureInfo, object! value, System.Type! destinationType) -> object!
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.InsertItem(int index, object! item) -> void
 override Gu.Wpf.AutoRowGrid.GridExtension.ChildCollection.SetItem(int index, object! item) -> void
 override Gu.Wpf.AutoRowGrid.GridExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
