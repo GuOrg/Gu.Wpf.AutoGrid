@@ -14,7 +14,7 @@ namespace Gu.Wpf.AutoRowGrid.Demo
             typeof(TestElement),
             new PropertyMetadata(
                 default(Thickness?),
-                (d, e) => OnTextBoxViewMarginChanged(((FrameworkElement)d), (Thickness?)e.NewValue)));
+                (d, e) => OnTextBoxViewMarginChanged((FrameworkElement)d, (Thickness?)e.NewValue)));
 
         /// <summary>Helper for setting <see cref="AllNestedMarginsAndPaddingsProperty"/> on <paramref name="element"/>.</summary>
         /// <param name="element"><see cref="FrameworkElement"/> to set <see cref="AllNestedMarginsAndPaddingsProperty"/> on.</param>

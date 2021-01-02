@@ -14,7 +14,7 @@ namespace Gu.Wpf.AutoRowGrid.Demo
             typeof(TextBoxView),
             new PropertyMetadata(
                 null,
-                (d, e) => OnMarginChanged(((TextBox)d), (Thickness?)e.NewValue)));
+                (d, e) => OnMarginChanged((TextBox)d, (Thickness?)e.NewValue)));
 
         public static Type Type { get; } = typeof(TextBox).Assembly.GetTypes().Single(x => x.Name == "TextBoxView");
 
