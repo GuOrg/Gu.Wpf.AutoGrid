@@ -12,7 +12,9 @@ namespace Gu.Wpf.AutoRowGrid.Demo
             "Margin",
             typeof(Thickness?),
             typeof(TextBoxView),
-            new PropertyMetadata(null, OnMarginChanged));
+            new PropertyMetadata(
+                null,
+                (d, e) => OnMarginChanged(((TextBox)d), (Thickness?)e.NewValue)));
 
         public static Type Type { get; } = typeof(TextBox).Assembly.GetTypes().Single(x => x.Name == "TextBoxView");
 
@@ -42,12 +44,6 @@ namespace Gu.Wpf.AutoRowGrid.Demo
             }
 
             return (Thickness?)element.GetValue(MarginProperty);
-        }
-
-        private static void OnMarginChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var textBox = (TextBox)d;
-            OnMarginChanged(textBox, (Thickness?)e.NewValue);
         }
 
         private static void OnMarginChanged(TextBox textBox, Thickness? margin)
