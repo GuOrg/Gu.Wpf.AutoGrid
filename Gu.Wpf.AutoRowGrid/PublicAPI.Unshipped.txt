@@ -1,1 +1,4 @@
-﻿
+﻿override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Wpf.AutoRowGrid.ColumnDefinitionsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!

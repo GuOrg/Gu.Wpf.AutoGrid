@@ -10,45 +10,34 @@ namespace Gu.Wpf.AutoRowGrid
     public class ColumnDefinitionsConverter : TypeConverter
     {
         /// <inheritdoc/>
-        public override bool CanConvertFrom(
-            ITypeDescriptorContext typeDescriptorContext,
-            Type sourceType)
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
         /// <inheritdoc/>
-        public override bool CanConvertTo(
-            ITypeDescriptorContext typeDescriptorContext,
-            Type destinationType)
+        public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
             return false;
         }
 
         /// <inheritdoc/>
-        public override object ConvertFrom(
-            ITypeDescriptorContext typeDescriptorContext,
-            CultureInfo cultureInfo,
-            object source)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            if (source is string text)
+            if (value is string text)
             {
-                var lengths = GridLengthsParser.Parse(typeDescriptorContext, cultureInfo, text);
+                var lengths = GridLengthsParser.Parse(context, culture, text);
                 var columnDefinitions = lengths.Select(gl => new System.Windows.Controls.ColumnDefinition { Width = gl })
                                                .ToArray();
                 return new ColumnDefinitions(columnDefinitions);
             }
 
-            return base.ConvertFrom(typeDescriptorContext, cultureInfo, source);
+            return base.ConvertFrom(context, culture, value);
         }
 
         /// <inheritdoc/>
         [SecurityCritical]
-        public override object ConvertTo(
-            ITypeDescriptorContext typeDescriptorContext,
-            CultureInfo cultureInfo,
-            object value,
-            Type destinationType)
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotSupportedException();
         }
