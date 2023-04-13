@@ -1,12 +1,11 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows.Controls;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    public partial class NestedRowsView : UserControl
+using System.Windows.Controls;
+
+public partial class NestedRowsView : UserControl
+{
+    public NestedRowsView()
     {
-        public NestedRowsView()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }

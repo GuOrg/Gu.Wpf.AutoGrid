@@ -1,58 +1,57 @@
-namespace Gu.Wpf.AutoRowGrid
+namespace Gu.Wpf.AutoRowGrid;
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Windows;
+
+internal static class GridLengthsParser
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Globalization;
-    using System.Linq;
-    using System.Windows;
+    private static readonly GridLengthConverter GridLengthConverter = new();
+    private static readonly char[] SeparatorChars = { ',', ' ' };
 
-    internal static class GridLengthsParser
+    internal static IEnumerable<GridLength> Parse(ITypeDescriptorContext? typeDescriptorContext, CultureInfo? cultureInfo, string text)
     {
-        private static readonly GridLengthConverter GridLengthConverter = new();
-        private static readonly char[] SeparatorChars = { ',', ' ' };
-
-        internal static IEnumerable<GridLength> Parse(ITypeDescriptorContext? typeDescriptorContext, CultureInfo? cultureInfo, string text)
+        try
         {
-            try
-            {
-                var lengths = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries)
-                                  .Select(x => (GridLength)GridLengthConverter.ConvertFrom(typeDescriptorContext, cultureInfo, x));
-                return lengths;
-            }
-            catch (Exception e)
-            {
-                var message = $"Could not parse gridlengts from {text}.\r\n" +
-                              $"Expected a string like '* 20 Auto'\r\n" +
-                              $"Valid separators are {{{string.Join(", ", SeparatorChars.Select(x => $"'x'"))}}}";
-                throw new FormatException(message, e);
-            }
+            var lengths = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries)
+                              .Select(x => (GridLength)GridLengthConverter.ConvertFrom(typeDescriptorContext, cultureInfo, x));
+            return lengths;
         }
-
-        // http://referencesource.microsoft.com/#PresentationFramework/src/Framework/System/Windows/GridLengthConverter.cs,218
-        internal static string ToString(GridLength gl, CultureInfo cultureInfo)
+        catch (Exception e)
         {
-            return gl.GridUnitType switch
-            {
-                // for Auto print out "Auto". value is always "1.0"
-                GridUnitType.Auto => "Auto",
-
-                // Star has one special case when value is "1.0".
-                // in this case drop value part and print only "Star"
-                GridUnitType.Star => IsOne(gl.Value)
-                                               ? "*"
-                                               : Convert.ToString(gl.Value, cultureInfo) + "*",
-
-                // for Pixel print out the numeric value. "px" can be omitted.
-                _ => Convert.ToString(gl.Value, cultureInfo),
-            };
+            var message = $"Could not parse gridlengts from {text}.\r\n" +
+                          $"Expected a string like '* 20 Auto'\r\n" +
+                          $"Valid separators are {{{string.Join(", ", SeparatorChars.Select(x => $"'x'"))}}}";
+            throw new FormatException(message, e);
         }
+    }
 
-        // http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs,8e95e6558bdb123d
-        private static bool IsOne(double value)
+    // http://referencesource.microsoft.com/#PresentationFramework/src/Framework/System/Windows/GridLengthConverter.cs,218
+    internal static string ToString(GridLength gl, CultureInfo cultureInfo)
+    {
+        return gl.GridUnitType switch
         {
-            const double DblEpsilon = 2.2204460492503131e-016;
-            return Math.Abs(value - 1.0) < 10.0 * DblEpsilon;
-        }
+            // for Auto print out "Auto". value is always "1.0"
+            GridUnitType.Auto => "Auto",
+
+            // Star has one special case when value is "1.0".
+            // in this case drop value part and print only "Star"
+            GridUnitType.Star => IsOne(gl.Value)
+                                           ? "*"
+                                           : Convert.ToString(gl.Value, cultureInfo) + "*",
+
+            // for Pixel print out the numeric value. "px" can be omitted.
+            _ => Convert.ToString(gl.Value, cultureInfo),
+        };
+    }
+
+    // http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs,8e95e6558bdb123d
+    private static bool IsOne(double value)
+    {
+        const double DblEpsilon = 2.2204460492503131e-016;
+        return Math.Abs(value - 1.0) < 10.0 * DblEpsilon;
     }
 }

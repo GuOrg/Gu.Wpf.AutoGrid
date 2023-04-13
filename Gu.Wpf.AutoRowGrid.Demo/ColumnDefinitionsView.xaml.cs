@@ -1,12 +1,11 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows.Controls;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    public partial class ColumnDefinitionsView : UserControl
+using System.Windows.Controls;
+
+public partial class ColumnDefinitionsView : UserControl
+{
+    public ColumnDefinitionsView()
     {
-        public ColumnDefinitionsView()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }

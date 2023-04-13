@@ -1,15 +1,14 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows.Controls;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    /// <summary>
-    /// Interaction logic for RowHeightView.xaml.
-    /// </summary>
-    public partial class RowHeightView : UserControl
+using System.Windows.Controls;
+
+/// <summary>
+/// Interaction logic for RowHeightView.xaml.
+/// </summary>
+public partial class RowHeightView : UserControl
+{
+    public RowHeightView()
     {
-        public RowHeightView()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }

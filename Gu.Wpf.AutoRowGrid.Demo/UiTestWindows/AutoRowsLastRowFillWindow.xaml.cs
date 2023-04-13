@@ -1,12 +1,11 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    public partial class AutoRowsLastRowFillWindow : Window
+using System.Windows;
+
+public partial class AutoRowsLastRowFillWindow : Window
+{
+    public AutoRowsLastRowFillWindow()
     {
-        public AutoRowsLastRowFillWindow()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }

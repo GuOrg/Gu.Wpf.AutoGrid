@@ -1,15 +1,14 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    /// <summary>
-    /// Interaction logic for ExplicitRowsAndColumnsWindow.xaml.
-    /// </summary>
-    public partial class ExplicitRowsAndColumnsWindow : Window
+using System.Windows;
+
+/// <summary>
+/// Interaction logic for ExplicitRowsAndColumnsWindow.xaml.
+/// </summary>
+public partial class ExplicitRowsAndColumnsWindow : Window
+{
+    public ExplicitRowsAndColumnsWindow()
     {
-        public ExplicitRowsAndColumnsWindow()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }

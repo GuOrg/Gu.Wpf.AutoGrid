@@ -1,12 +1,11 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    public partial class ExplicitRowsAndColumnsLastRowWindow : Window
+using System.Windows;
+
+public partial class ExplicitRowsAndColumnsLastRowWindow : Window
+{
+    public ExplicitRowsAndColumnsLastRowWindow()
     {
-        public ExplicitRowsAndColumnsLastRowWindow()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }

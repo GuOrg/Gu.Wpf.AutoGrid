@@ -1,12 +1,11 @@
-﻿namespace Gu.Wpf.AutoRowGrid.Demo
-{
-    using System.Windows;
+﻿namespace Gu.Wpf.AutoRowGrid.Demo;
 
-    public partial class AutoRowsAndColumnsExplicitStarHeightWindow : Window
+using System.Windows;
+
+public partial class AutoRowsAndColumnsExplicitStarHeightWindow : Window
+{
+    public AutoRowsAndColumnsExplicitStarHeightWindow()
     {
-        public AutoRowsAndColumnsExplicitStarHeightWindow()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
     }
 }
