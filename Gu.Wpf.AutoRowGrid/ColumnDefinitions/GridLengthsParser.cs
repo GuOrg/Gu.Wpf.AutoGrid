@@ -9,7 +9,7 @@ namespace Gu.Wpf.AutoRowGrid
 
     internal static class GridLengthsParser
     {
-        private static readonly GridLengthConverter GridLengthConverter = new GridLengthConverter();
+        private static readonly GridLengthConverter GridLengthConverter = new();
         private static readonly char[] SeparatorChars = { ',', ' ' };
 
         internal static IEnumerable<GridLength> Parse(ITypeDescriptorContext? typeDescriptorContext, CultureInfo? cultureInfo, string text)
